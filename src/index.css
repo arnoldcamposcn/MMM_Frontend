@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🔹 Componentes reutilizables */
+@layer components {
+  .btn-gradient {
+    @apply px-6 py-3.5 rounded-full text-sm font-normal uppercase text-white 
+           bg-gradient-to-r from-emerald-400/80 to-cyan-400/40 hover:opacity-90 
+           transition inline-flex items-center justify-center;
+  }
+  .gradient-card {
+    @apply  text-white 
+           bg-gradient-to-r from-emerald-400/80 to-cyan-400/40 hover:opacity-90 
+           transition inline-flex items-center justify-center;
+  }
+  .gradient-card-service {
+    @apply  text-white 
+           bg-white from-emerald-400/80 to-cyan-400/40 hover:opacity-90 
+           transition inline-flex;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3.5 rounded-full text-sm font-normal uppercase text-white 
+           inline-flex items-center gap-2 transition relative; /* Añadimos 'relative' para el pseudo-elemento */
+    background: transparent;
+    z-index: 1; /* Asegura que el contenido del botón esté por encima del borde */
+  }
+
+.btn-outline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 9999px; /* Coincide con rounded-full */
+  border: 1px solid transparent;
+  background: linear-gradient(
+      90deg,
+      rgba(69, 246, 255, 0.8) 4%,
+      rgba(0, 216, 173, 0.8) 100%
+    ) border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  z-index: -1; /* Coloca el borde detrás del contenido del botón */
+}
+
+  .btn-outline-service {
+    @apply rounded-xl text-base font-medium text-white transition
+           flex items-center gap-4 px-6; /* Estilos centralizados */
+
+    width: 255px; /* Ancho reducido */
+    height: 60px; /* Alto reducido */
+    border: 1px solid transparent;
+
+    background-image: 
+      linear-gradient(theme('colors.black'), theme('colors.black')), /* fondo sólido (negro) */
+      linear-gradient(
+        90deg,
+        rgba(69, 246, 255, 0.8) 4%,
+        rgba(0, 216, 173, 0.8) 100%,
+        rgba(69, 246, 255, 0.1) 100%
+      ); /* degradado del borde */
+
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+  
+  .service-title-wrapper {
+    @apply inline-block px-2 py-1 bg-gradient-to-br from-emerald-400/80 to-cyan-400/10 rounded-lg;
+  }
+  
+  
+  
+  @layer utilities {
+    .bg-gradient {
+      @apply bg-gradient-to-r from-emerald-400/80 to-cyan-400/40;
+    }
+  }
+}
+
+/* 🔹 Utilidades personalizadas */
+@layer utilities {
+  .bg-gradient {
+    background-image:
+      linear-gradient(to bottom, rgba(3, 3, 3, 0.2) 10%, rgba(3, 3, 3, 1) 100%),
+      linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+      url('@/assets/cover/gradiente.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .bg-gradient-inverted {
+    background-image:
+      /* Degradado lineal en la parte inferior, pocos píxeles */
+      linear-gradient(to top, #000000 0%, #000000 100%),
+      /* Degradado existente */
+      linear-gradient(to top, rgba(3, 3, 3, 0.2) 10%, rgba(3, 3, 3, 1) 100%),
+      linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+      /* Imagen de fondo */
+      url('@/assets/cover/gradient-reverse.png');
+  
+    background-size: 100% 10px, cover, cover, cover; /* 10px de altura solo para el degradado inferior */
+    background-position: bottom, center, center, center;
+    background-repeat: no-repeat;
+  }
+  
+
+  .bg-gradient-reverse2 {
+    background-image:
+      linear-gradient(to bottom, rgba(3, 3, 3, 0.2) 10%, rgba(3, 3, 3, 1) 100%),
+      linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+      url('@/assets/cover/gradient-reverse2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  
+  .bg-gradient-left {
+    background-image:
+      linear-gradient(to top, rgba(3, 3, 3, 0.2) 10%, rgba(3, 3, 3, 1) 100%),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+      url('@/assets/cover/bg-gradient-left.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .bg-gradient-top {
+    background-image:
+      linear-gradient(to bottom, rgba(3, 3, 3, 0.2) 0%, rgba(3, 3, 3, 1) 100%),
+      url('@/assets/cover/bg-gradient-left.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-emerald-400/80 to-cyan-400/40 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-service {
+    @apply bg-gradient-to-r from-emerald-400/80 to-cyan-400/40 text-black;
+  }
+  .text-paragraph {
+    @apply text-white text-sm md:text-base font-normal text-justify;
+  }
+  .title-text{
+    @apply text-white text-2xl lg:text-3xl font-semibold uppercase;
+  }
+  .title-text-black{
+    @apply text-black text-2xl lg:text-3xl font-semibold uppercase;
+  }
+  .side-spaces{
+    @apply  px-4 md:px-6 lg:px-8;
+  }
+  .gap-responsive{
+    @apply gap-4 md:gap-6 lg:gap-8;
+  }
+
+  .modal-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 transition-opacity duration-300;
+  }
+
+  .modal-content {
+    @apply relative bg-transparent p-4 rounded-lg max-w-4xl max-h-[90vh];
+  }
+
+  @keyframes open-modal-anim {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes close-modal-anim {
+    from {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    to {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+  }
+
+  .modal-open {
+    animation: open-modal-anim 0.3s ease-out forwards;
+  }
+
+  .modal-close {
+    animation: close-modal-anim 0.4s ease-in forwards;
+  }
+
+
+  .fill-gradient {
+    fill: url(#gradient);
+  }
+
+  .img-fade-left {
+    mask-image: linear-gradient(to left, black 60%, transparent 100%);
+  }
+  .menu-services {
+    @apply transition-all duration-300 hover:text-[#53C1A9] cursor-pointer text-base lg:text-xl;
+  }
+
+  .bg-cyan-gradient-card {
+    background: linear-gradient(64deg, rgba(69, 246, 255, 0.80) 4%, rgba(69, 246, 255, 0.10) 100%);
+  }
+
+  
+}
+
+/* 🔹 Estilos globales */
+body {
+  @apply bg-gray-100 text-grayCustom;
+}
