@@ -1,6 +1,7 @@
 // src/components/organisms/Header.tsx
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Logo from "../atoms/Logo";
 import Container from "../layouts/Container";
 import LanguageSelector, { type Language } from "../molecules/LanguageSelector";
@@ -11,6 +12,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ className = "" }) => {
+  const { t, i18n } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,13 +20,19 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const languages: Language[] = [
-    { code: "ES", name: "Español" },
-    { code: "US", name: "Inglés" },
+    { code: "es", name: t("language.spanish") },
+    { code: "en", name: t("language.english") },
   ];
 
-  const [selectedLang, setSelectedLang] = useState<Language>(languages[0]);
+  const [selectedLang, setSelectedLang] = useState<Language>(() => {
+    const currentLang = i18n.language || "es";
+    return languages.find(lang => lang.code === currentLang) || languages[0];
+  });
 
-  const handleLangChange = (lang: Language) => setSelectedLang(lang);
+  const handleLangChange = (lang: Language) => {
+    setSelectedLang(lang);
+    i18n.changeLanguage(lang.code);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,12 +53,12 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
   }, [lastScrollY]);
 
   const navigationItems = [
-    { label: "Inicio", href: "/", isActive: location.pathname === "/" },
-    { label: "Nosotros", href: "/nosotros", isActive: location.pathname === "/nosotros" },
-    { label: "Servicio", href: "/servicio", isActive: location.pathname === "/servicio" },
-    { label: "Portafolio", href: "/portafolio", isActive: location.pathname === "/portafolio" },
-    { label: "Contacto", href: "/contacto", isActive: location.pathname === "/contacto" },
-    { label: "Meta Mining Revista", href: "/meta-mining-revista", isActive: location.pathname === "/meta-mining-revista" },
+    { label: t("navigation.home"), href: "/", isActive: location.pathname === "/" },
+    { label: t("navigation.about"), href: "/nosotros", isActive: location.pathname === "/nosotros" },
+    { label: t("navigation.service"), href: "/servicios", isActive: location.pathname === "/servicio" },
+    { label: t("navigation.portfolio"), href: "/portafolio", isActive: location.pathname === "/portafolio" },
+    { label: t("navigation.contact"), href: "/contacto", isActive: location.pathname === "/contacto" },
+    { label: t("navigation.magazine"), href: "/meta-mining-revista", isActive: location.pathname === "/meta-mining-revista" },
   ];
 
   return (

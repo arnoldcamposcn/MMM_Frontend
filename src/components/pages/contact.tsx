@@ -1,5 +1,5 @@
 
-
+import { useTranslation } from 'react-i18next';
 import Container from "../layouts/Container"
 import { Breadcrumb } from "../organisms/Breadcrumb"
 import { ContactSection } from "../organisms/ContactSection"
@@ -7,6 +7,8 @@ import Header from "../organisms/Header"
 
 
 export const ContactPage = () => {
+  const { t } = useTranslation();
+  
   return (
     <section className="bg-gradient min-h-screen flex flex-col">
       <Header className="relative z-10" />
@@ -15,9 +17,9 @@ export const ContactPage = () => {
         <Container>
           <div className="py-12">
             <Breadcrumb
-              title={<>CONTACTO</>}
-              path="INICIO / CONTACTO"
-              description="Estamos listos para escuchar tus ideas y necesidades. En Meta Mining Media te ofrecemos un canal directo para consultas, cotizaciones y colaboraciones. Conversemos y demos forma a tu próximo proyecto."
+              title={<>{t("contact.title")}</>}
+              path={t("contact.breadcrumb")}
+              // description={t("contact.description")}
             />
           </div>
         </Container>

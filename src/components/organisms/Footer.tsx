@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Logo from '../atoms/Logo';
 import { type SocialLink } from '../molecules/SocialLinks';
 import FooterNavigationColumn, { type NavigationLink } from '../molecules/FooterNavigationColumn';
@@ -42,37 +43,40 @@ const Footer: React.FC<FooterProps> = ({
     { platform: 'linkedin', href: 'https://linkedin.com' }
   ],
   
-  companyTitle = "Compañia",
-  companyLinks = [
-    { label: 'Nosotros', href: '/nosotros' },
-    { label: 'Servicios', href: '/servicios' },
-    { label: 'Portafolio', href: '/portafolio' },
-    { label: 'Meta mining Revista', href: '/revista' },
-    { label: 'Contacto', href: '/contacto' }
-  ],
+  companyTitle,
+  companyLinks,
   
-  resourcesTitle = "Recursos",
-  resourcesLinks = [
-    { label: "Brochure", href: "/brochure" },
-    { label: "FAQs", href: "/faqs" },
-  ],
+  resourcesTitle,
+  resourcesLinks,
 
-  legalTitle = "Legal",
-  legalLinks = [
-    { label: "Política de privacidad", href: "/privacidad" },
-    { label: "Cookies", href: "/cookies" },
-    { label: "Términos y condiciones", href: "/terminos" },
-    { label: "Privacy", href: "/privacy" },
-  ],
+  legalTitle,
+  legalLinks,
   
-  subscribeTitle = "Subscribe",
-  subscribeDescription = "Recibe en tu correo las últimas noticias, análisis y tendencias de la minería moderna. Sé parte de la comunidad que conecta innovación, ESG y tecnología en LATAM.",
-  subscribeDisclaimer = "By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.",
+  subscribeTitle,
+  subscribeDescription,
+  subscribeDisclaimer,
   onNewsletterSubscribe,
   
-  copyrightText = `© ${new Date().getFullYear()} Codea Mining Media. Derechos reservados`,
+  copyrightText,
   className = ''
 }) => {
+  const { t } = useTranslation();
+  
+  // Usar traducciones si no se proporcionan props
+  const finalCompanyTitle = companyTitle || t("footer.company.title");
+  const finalCompanyLinks = companyLinks || t("footer.company.links", { returnObjects: true }) as NavigationLink[];
+  
+  const finalResourcesTitle = resourcesTitle || t("footer.resources.title");
+  const finalResourcesLinks = resourcesLinks || t("footer.resources.links", { returnObjects: true }) as NavigationLink[];
+
+  const finalLegalTitle = legalTitle || t("footer.legal.title");
+  const finalLegalLinks = legalLinks || t("footer.legal.links", { returnObjects: true }) as LegalLink[];
+  
+  const finalSubscribeTitle = subscribeTitle || t("footer.newsletter.title");
+  const finalSubscribeDescription = subscribeDescription || t("footer.newsletter.description");
+  const finalSubscribeDisclaimer = subscribeDisclaimer || t("footer.newsletter.disclaimer");
+  
+  const finalCopyrightText = copyrightText || t("footer.copyright", { year: new Date().getFullYear() });
   const handleNewsletterSubscribe = (email: string) => {
     if (onNewsletterSubscribe) {
       onNewsletterSubscribe(email);
@@ -91,7 +95,7 @@ const Footer: React.FC<FooterProps> = ({
           <div className="md:col-span-6 lg:col-span-3">
           <div className="flex flex-col gap-4">
           <Logo className="text-white" />
-          <p className="paragraph-magazine text-gray-300 text-sm leading-relaxed">Conectamos innovación, ESG y tecnología <br /> en la minería de LATAM.</p>
+          <p className="paragraph-magazine text-gray-300 text-sm leading-relaxed">{t("footer.description")}</p>
           </div>
            
           </div>
@@ -99,36 +103,36 @@ const Footer: React.FC<FooterProps> = ({
           {/* Columna 2: Compañia */}
           <div className="md:col-span-3 lg:col-span-2">
             <FooterNavigationColumn
-              title={companyTitle}
-              links={companyLinks}
+              title={finalCompanyTitle}
+              links={finalCompanyLinks}
             />
           </div>
           
           {/* Columna 3: Recursos */}
           <div className="md:col-span-3 lg:col-span-2">
             <FooterNavigationColumn
-              title={resourcesTitle}
-              links={resourcesLinks}
+              title={finalResourcesTitle}
+              links={finalResourcesLinks}
             />
           </div>
 
           {/* Columna 4: Legal */}
           <div className="md:col-span-3 lg:col-span-2">
             <FooterLegalSection
-              title={legalTitle}
-              legalLinks={legalLinks}
+              title={finalLegalTitle}
+              legalLinks={finalLegalLinks}
             />
           </div>
           
           {/* Columna 5: Newsletter */}
           <div className="md:col-span-3 lg:col-span-3">
             <FooterNewsletterSection
-              title={subscribeTitle}
-              description={subscribeDescription}
+              title={finalSubscribeTitle}
+              description={finalSubscribeDescription}
               onSubscribe={handleNewsletterSubscribe}
-              placeholder="Introduce tu email"
-              buttonText="Subscribirme"
-              disclaimerText={subscribeDisclaimer}
+              placeholder={t("footer.newsletter.placeholder")}
+              buttonText={t("footer.newsletter.button")}
+              disclaimerText={finalSubscribeDisclaimer}
             />
           </div>
           
@@ -142,7 +146,7 @@ const Footer: React.FC<FooterProps> = ({
             {/* Copyright */}
             <div className="text-center sm:text-left">
               <p className="paragraph-magazine text-gray-300 text-sm">
-                {copyrightText}
+                {finalCopyrightText}
               </p>
             </div>
             

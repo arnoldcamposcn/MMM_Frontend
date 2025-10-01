@@ -1,7 +1,10 @@
+import { useTranslation } from 'react-i18next';
 import { ContactForm } from './ContactForm';
 import SocialLinks, { type SocialLink } from '../molecules/SocialLinks';
 
 export const ContactSection = () => {
+  const { t } = useTranslation();
+  
   const socialLinks: SocialLink[] = [
     { platform: 'facebook', href: '#' },
     { platform: 'linkedin', href: '#' },
@@ -13,23 +16,23 @@ export const ContactSection = () => {
     <div className="flex flex-col items-center justify-center gap-12 px-6 md:px-12 bg-grayCustom rounded-3xl py-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-14 text-white w-full">
         <div className="flex flex-col gap-10">
-          <h1 className="title-text">Hablemos de tu próximo proyecto</h1>
-          <p className="text-paragraph">En Meta Mining Media estamos listos para acompañarte en la creación de soluciones audiovisuales, digitales y eventos que transformen la comunicación de tu empresa. Escríbenos y recibe una asesoría clara, rápida y sin compromiso.</p>
+          <h1 className="title-text">{t("contact.section.title")}</h1>
+          <p className="text-paragraph">{t("contact.section.description")}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 items-start justify-start gap-8 text-white">
             <div>
-              <h2 className="text-xl lg:text-2xl font-bold uppercase pb-2">contactanos</h2>
-              <span className="text-sm md:text-base"> +51 919-543-397</span>
+              <h2 className="text-xl lg:text-2xl font-bold uppercase pb-2">{t("contact.section.contactInfo.contactUs")}</h2>
+              <span className="text-sm md:text-base">{t("contact.section.contactInfo.phone")}</span>
             </div>
             <div>
-              <h2 className="text-xl lg:text-2xl font-bold uppercase pb-2">ubicación</h2>
-              <span className="text-sm md:text-base">Av. Miraflores 123, Lima, Perú</span>
+              <h2 className="text-xl lg:text-2xl font-bold uppercase pb-2">{t("contact.section.contactInfo.location")}</h2>
+              <span className="text-sm md:text-base">{t("contact.section.contactInfo.address")}</span>
             </div>
             <div>
-              <h2 className="text-xl lg:text-2xl font-bold uppercase pb-2">email</h2>
-              <span className="text-sm md:text-base">info@metamining.com</span>
+              <h2 className="text-xl lg:text-2xl font-bold uppercase pb-2">{t("contact.section.contactInfo.email")}</h2>
+              <span className="text-sm md:text-base">{t("contact.section.contactInfo.emailAddress")}</span>
             </div>
             <div>
-              <h2 className="text-xl lg:text-2xl font-bold uppercase pb-2">Síguenos</h2>
+              <h2 className="text-xl lg:text-2xl font-bold uppercase pb-2">{t("contact.section.contactInfo.followUs")}</h2>
               <SocialLinks links={socialLinks} />
             </div>
           </div>

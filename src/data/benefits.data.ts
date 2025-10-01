@@ -1,24 +1,29 @@
+import { useTranslation } from 'react-i18next';
 import { type ValueData } from './values.data';
 
-export const benefitsData: ValueData[] = [
-  {
-    icon: "/icons/impacto.png",
-    title: "Posicionamiento estratégico",
-    description: "Fortalecemos la imagen y reputación de las empresas mineras en sus principales audiencias.",
-  },
-  {
-    icon: "/icons/comunicacion.svg",
-    title: "Comunicación efectiva",
-    description: "Traducimos la complejidad de la minería en mensajes claros, atractivos y memorables.",
-  },
-  {
-    icon: "/icons/colaboracion.png",
-    title: "Conexión con la comunidad",
-    description: "Generamos vínculos sólidos entre empresas, profesionales y sociedad.",
-  },
-  {
-    icon: "/icons/innovacion.svg",
-    title: "Valor sostenible",
-    description: "Impulsamos proyectos que aportan innovación, confianza e impacto a largo plazo.",
-  },
-];
+export const useBenefitsData = (): ValueData[] => {
+  const { t } = useTranslation();
+  
+  return [
+    {
+      icon: "/icons/impacto.png",
+      title: t("informationService.benefits.items.0.title"),
+      description: t("informationService.benefits.items.0.description"),
+    },
+    {
+      icon: "/icons/comunicacion.svg",
+      title: t("informationService.benefits.items.1.title"),
+      description: t("informationService.benefits.items.1.description"),
+    },
+    {
+      icon: "/icons/colaboracion.png",
+      title: t("informationService.benefits.items.2.title"),
+      description: t("informationService.benefits.items.2.description"),
+    },
+    {
+      icon: "/icons/innovacion.svg",
+      title: t("informationService.benefits.items.3.title"),
+      description: t("informationService.benefits.items.3.description"),
+    },
+  ];
+};

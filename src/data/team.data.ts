@@ -1,4 +1,6 @@
 
+import { useTranslation } from 'react-i18next';
+
 export interface TeamMember {
   member?: {
     name: string;
@@ -7,13 +9,17 @@ export interface TeamMember {
   image?: string;
 }
 
-export const teamMembers: TeamMember[] = [
-  { member: { name: "Bill Clint", title: "CEO - Meta Mining Media" } },
-  { image: "/people/avatar1.jpg" },
-  { member: { name: "Nilson Garrido", title: "Jefe de Proyectos - Meta Mining Media" } },
-  { image: "/people/avatar2.jpg" },
-  { member: { name: "Jorge Ramirez", title: "Lider de Operaciones - Meta Mining Media" } },
-  { image: "/people/avatar3.jpeg" },
-  { member: { name: "Fernando López", title: "Lider de desarrollo - Meta Mining Media" } },
-  { image: "/people/woman.jpg" },
-];
+export const useTeamMembers = (): TeamMember[] => {
+  const { t } = useTranslation();
+  
+  return [
+    { member: { name: t("about.team.members.0.name"), title: t("about.team.members.0.title") } },
+    { image: "/people/avatar1.jpg" },
+    { member: { name: t("about.team.members.1.name"), title: t("about.team.members.1.title") } },
+    { image: "/people/avatar2.jpg" },
+    { member: { name: t("about.team.members.2.name"), title: t("about.team.members.2.title") } },
+    { image: "/people/avatar3.jpeg" },
+    { member: { name: t("about.team.members.3.name"), title: t("about.team.members.3.title") } },
+    { image: "/people/woman.jpg" },
+  ];
+};

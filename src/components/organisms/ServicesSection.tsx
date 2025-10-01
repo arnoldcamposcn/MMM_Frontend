@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useFetch } from '../../hooks/useFetch';
 import { getServices } from '../../services/articles/article.service';
 import type { servicesSchema } from '../../schema/mmm/types';
@@ -11,6 +12,7 @@ interface GroupedServices {
 }
 
 export const ServicesSection = () => {
+  const { t } = useTranslation();
   const { data: services, loading, error } = useFetch<servicesSchema[]>(getServices);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [activeService, setActiveService] = useState<servicesSchema | null>(null);
@@ -71,14 +73,13 @@ export const ServicesSection = () => {
     }
   };
 
-  if (loading) return <p className="text-white text-center">Cargando categorías...</p>;
-  if (error) return <p className="text-white text-center">Error al cargar categorías.</p>;
+  if (loading) return <p className="text-white text-center">{t("servicesSection.loading")}</p>;
+  if (error) return <p className="text-white text-center">{t("servicesSection.error")}</p>;
 
   return (
     <div className="flex flex-col items-center justify-center px-8 w-full">
       <h1 className="text-3xl font-bold text-white text-center pb-12">
-        CONOCE NUESTROS <br />
-        SERVICIOS
+        {t("servicesSection.title")}
       </h1>
       
 
@@ -150,7 +151,7 @@ export const ServicesSection = () => {
             <div className="flex mt-2">
               <Link to={`/servicios/${activeService.slug}`}>
                 <Button variant="gradient" className="uppercase group">
-                    <span>conocer servicio</span>
+                    <span>{t("servicesSection.button")}</span>
                     <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>

@@ -13,8 +13,8 @@ const AppNavigator = () => {
     <BrowserRouter>
       <MainLayout>
         <Routes>
-            <Route path="/" element={<App />} />
-            <Route path="/home" element={<HomePage />} />
+            {/* <Route path="/" element={<App />} /> */}
+            <Route path="/" element={<HomePage />} />
             <Route path="/nosotros" element={<AboutPage />} />
             <Route path="/contacto" element={<ContactPage />} />
             <Route path="/portafolio" element={<PortfolioPage />} />

@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { PortfolioCard } from "../molecules/PortfolioCard";
 import { Button } from "../atoms/Button";
 import { useFetch } from "../../hooks/useFetch";
@@ -19,6 +20,7 @@ interface PortfolioSectionProps {
 }
 
 export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = false, showAllProjectsButton = false }) => {
+  const { t } = useTranslation();
   const { data: portfolioItems, loading, error } = useFetch<PortfolioItem[]>(getPortfolio);
   const [activeCategoryId, setActiveCategoryId] = useState<number | null>(null);
   const [visibleCount, setVisibleCount] = useState<number>(8);
@@ -49,14 +51,14 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = 
     setVisibleCount(8);
   };
 
-  if (loading) return <p className="text-center text-white">Cargando proyectos...</p>;
-  if (error) return <p className="text-center text-white">Hubo un error al cargar los proyectos.</p>;
+  if (loading) return <p className="text-center text-white">{t("portfolio.section.loading")}</p>;
+  if (error) return <p className="text-center text-white">{t("portfolio.section.error")}</p>;
 
   return (
     <div className="flex flex-col items-center justify-center gap-10">
       {showTitle && (
         <h1 className="text-3xl font-bold text-white text-center uppercase">
-          CONOCE NUESTROS <br /> PROYECTOS
+          {t("portfolio.section.title")}
         </h1>
       )}
       
@@ -65,7 +67,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = 
         <div
           className="flex gap-2 overflow-x-auto px-4 py-3 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           role="tablist"
-          aria-label="Categorías (desliza para ver más)"
+          aria-label={t("portfolio.section.filters.mobileLabel")}
         >
           <button
             type="button"
@@ -76,7 +78,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = 
               activeCategoryId === null ? "bg-white text-black" : "bg-white/10 hover:bg-white/20 text-white"
             }`}
           >
-            Todos
+            {t("portfolio.section.filters.all")}
           </button>
           {categories.map((cat) => {
             const active = activeCategoryId === cat.id;
@@ -102,7 +104,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = 
       <div
         className="hidden md:flex flex-wrap items-center justify-center gap-3 md:gap-4 uppercase text-white font-medium py-2"
         role="tablist"
-        aria-label="Filtros de categoría"
+        aria-label={t("portfolio.section.filters.desktopLabel")}
       >
         <button
           type="button"
@@ -113,7 +115,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = 
             activeCategoryId === null ? "bg-white text-black" : "bg-white/10 hover:bg-white/20 text-white"
           }`}
         >
-          Todos
+          {t("portfolio.section.filters.all")}
         </button>
         {categories.map((cat) => {
           const active = activeCategoryId === cat.id;
@@ -138,7 +140,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-white uppercase text-lg font-medium w-full">
         {visibleData.length === 0 ? (
           <div className="col-span-full text-center normal-case font-normal text-white/80">
-            No hay proyectos en la categoría seleccionada.
+            {t("portfolio.section.noProjects")}
           </div>
         ) : (
           visibleData.map((item) => (
@@ -159,13 +161,13 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = 
             className="uppercase"
             onClick={() => setVisibleCount((prev) => prev + 8)}
           >
-            Ver más
+            {t("portfolio.section.buttons.seeMore")}
           </Button>
         )}
         {showAllProjectsButton && (
           <Link to="/portafolio">
             <Button variant="outline" className="uppercase">
-              Ver todos los proyectos
+              {t("portfolio.section.buttons.seeAll")}
             </Button>
           </Link>
         )}

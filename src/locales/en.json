@@ -1,0 +1,308 @@
+{
+  "language": {
+    "spanish": "Spanish",
+    "english": "English"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "service": "Service",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "magazine": "Meta Mining Magazine"
+  },
+  "about": {
+    "title": "About Us",
+    "breadcrumb": "HOME / ABOUT",
+    "description": "Meta Mining Media (MMM) is a digital producer and agency specialized in the mining sector. Its purpose is to connect companies, suppliers and clusters with their main audiences through creative proposals and high-impact content. Under MMM, three flagship productions are developed that reflect the dynamism and evolution of the industry.",
+    "extendedDescription": "The project is born from the experience of CODEa UNI, an educational organization that has brought together thousands of students and mining professionals from different countries. From that academic and community base, Meta Mining Media emerges as a natural evolution that drives new ways of communicating, inspiring and strengthening bonds within the mining ecosystem. Our essence is marked by the commitment to innovation, knowledge generation and the creation of meeting spaces that transcend the digital. In this way, we seek not only to tell mining stories, but also to contribute to the development of a global community that values, shares and projects the future of the sector.",
+    "purpose": {
+      "title": "Our Purpose",
+      "mission": {
+        "title": "Mission",
+        "description": "Drive mining communication with creative, technical and human proposals that convey innovation, safety and sustainability, strengthening the sector's positioning."
+      },
+      "vision": {
+        "title": "Vision",
+        "description": "To be the leading mining media agency in LATAM, recognized for integrating community, technology and creativity in high-impact projects that inspire and transform mining communication."
+      }
+    },
+    "values": {
+      "title": "OUR VALUES",
+      "items": [
+        {
+          "title": "Innovation",
+          "description": "We create new ideas that transform communication."
+        },
+        {
+          "title": "Technical Rigor",
+          "description": "We take care of every detail with discipline, order and precision."
+        },
+        {
+          "title": "Strategic Alliance",
+          "description": "We combine talents and visions to grow together."
+        },
+        {
+          "title": "Results Focus",
+          "description": "We generate projects that leave a mark on the industry."
+        }
+      ]
+    },
+    "team": {
+      "title": "MEET OUR TEAM",
+      "description": "At MMM we bring together creative talent and mining vision to create projects that inspire, connect and generate real value.",
+      "members": [
+        {
+          "name": "Bill Clint",
+          "title": "CEO - Meta Mining Media"
+        },
+        {
+          "name": "Nilson Garrido",
+          "title": "Project Manager - Meta Mining Media"
+        },
+        {
+          "name": "Jorge Ramirez",
+          "title": "Operations Leader - Meta Mining Media"
+        },
+        {
+          "name": "Fernando López",
+          "title": "Development Leader - Meta Mining Media"
+        }
+      ]
+    }
+  },
+  "footer": {
+    "description": "We connect innovation, ESG and technology in LATAM mining.",
+    "company": {
+      "title": "Company",
+      "links": [
+        { "label": "About", "href": "/nosotros" },
+        { "label": "Services", "href": "/servicios" },
+        { "label": "Portfolio", "href": "/portafolio" },
+        { "label": "Meta mining Magazine", "href": "/revista" },
+        { "label": "Contact", "href": "/contacto" }
+      ]
+    },
+    "resources": {
+      "title": "Resources",
+      "links": [
+        { "label": "Brochure", "href": "/brochure" },
+        { "label": "FAQs", "href": "/faqs" }
+      ]
+    },
+    "legal": {
+      "title": "Legal",
+      "links": [
+        { "label": "Privacy Policy", "href": "/privacidad" },
+        { "label": "Cookies", "href": "/cookies" },
+        { "label": "Terms and Conditions", "href": "/terminos" },
+        { "label": "Privacy", "href": "/privacy" }
+      ]
+    },
+    "newsletter": {
+      "title": "Subscribe",
+      "description": "Receive in your email the latest news, analysis and trends in modern mining. Be part of the community that connects innovation, ESG and technology in LATAM.",
+      "placeholder": "Enter your email",
+      "button": "Subscribe",
+      "disclaimer": "By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company."
+    },
+    "copyright": "© {{year}} Codea Mining Media. All rights reserved"
+  },
+  "contact": {
+    "title": "CONTACT",
+    "breadcrumb": "HOME / CONTACT",
+    "description": "We are ready to listen to your ideas and needs. At Meta Mining Media we offer you a direct channel for inquiries, quotes and collaborations. Let's talk and shape your next project.",
+    "section": {
+      "title": "Let's talk about your next project",
+      "description": "At Meta Mining Media we are ready to accompany you in creating audiovisual, digital and event solutions that transform your company's communication. Write to us and receive clear, fast and no-obligation advice.",
+      "contactInfo": {
+        "contactUs": "contact us",
+        "phone": "+51 919-543-397",
+        "location": "location",
+        "address": "Av. Miraflores 123, Lima, Perú",
+        "email": "email",
+        "emailAddress": "info@metamining.com",
+        "followUs": "Follow us"
+      }
+    },
+    "form": {
+      "title": "Contact our specialists",
+      "description": "Tell us about your project or inquiry and one of our specialists will contact you shortly.",
+      "fields": {
+        "name": "Enter full name",
+        "company": "Company / Organization",
+        "email": "Corporate email",
+        "position": "Role",
+        "website": "Website",
+        "message": "Tell us about your project"
+      },
+      "buttons": {
+        "sending": "Sending...",
+        "sent": "Sent!",
+        "send": "Send Message"
+      },
+      "success": "Message sent!"
+    }
+  },
+  "portfolio": {
+    "title": "PORTFOLIO",
+    "breadcrumb": "HOME / PORTFOLIO",
+    "loading": "Loading portfolio...",
+    "error": "There was an error loading the portfolio.",
+    "section": {
+      "title": "DISCOVER OUR PROJECTS",
+      "loading": "Loading projects...",
+      "error": "There was an error loading the projects.",
+      "filters": {
+        "all": "All",
+        "mobileLabel": "Categories (scroll to see more)",
+        "desktopLabel": "Category filters"
+      },
+      "noProjects": "There are no projects in the selected category.",
+      "buttons": {
+        "seeMore": "See more",
+        "seeAll": "See all projects"
+      }
+    }
+  },
+  "services": {
+    "title": "SERVICES",
+    "breadcrumb": "HOME / SERVICES",
+    "loading": "Loading services...",
+    "error": "There was an error loading the services.",
+    "description": "Discover the services that Meta Mining Media offers to transform your company's communication. From digital marketing campaigns to productions.",
+    "informativeBox": {
+      "title": "We transform mining communication into high-impact experiences",
+      "description": "At Meta Mining Media we integrate audiovisual, digital marketing, events and special solutions to help mining companies and suppliers communicate with clarity, innovation and measurable results. Our team combines technical rigor with creativity, ensuring productions that strengthen your brand and generate trust in the industry.",
+      "additionalInfo": "+100 B2B projects successfully executed in mining.",
+      "buttons": {
+        "primary": "Quote your project",
+        "secondary": "Explore services"
+      }
+    }
+  },
+  "informationService": {
+    "loading": "Loading service...",
+    "error": "There was an error loading the service.",
+    "notFound": "Service not found.",
+    "breadcrumb": "HOME / SERVICES",
+    "sections": {
+      "whatIncludes": "What does the service include?",
+      "benefits": "Benefits",
+      "workflow": "Our Workflow",
+      "faq": "Frequently Asked Questions",
+      "contact": "Contact Us"
+    },
+    "benefits": {
+      "items": [
+        {
+          "title": "Strategic positioning",
+          "description": "We strengthen the image and reputation of mining companies with their main audiences."
+        },
+        {
+          "title": "Effective communication",
+          "description": "We translate the complexity of mining into clear, attractive and memorable messages."
+        },
+        {
+          "title": "Community connection",
+          "description": "We generate solid links between companies, professionals and society."
+        },
+        {
+          "title": "Sustainable value",
+          "description": "We drive projects that bring innovation, trust and long-term impact."
+        }
+      ]
+    },
+    "faq": {
+      "items": [
+        {
+          "question": "What level of customization do the services have?",
+          "answer": "Each service is designed based on an analysis of the client's needs. We don't offer standard solutions, but projects that integrate creativity, technical knowledge and strategic vision. This allows us to align each delivery with the company's identity and the objectives it seeks to achieve in the mining or industrial sector."
+        },
+        {
+          "question": "Can several services be combined in the same project?",
+          "answer": "Yes. In fact, many of our clients combine different services to get an integral plan. By working this way we achieve more coherent and consistent communication, with pieces and actions that complement each other. This generates greater impact and ensures that efforts translate into measurable results."
+        },
+        {
+          "question": "Do you offer support or accompaniment after delivery?",
+          "answer": "Yes, our commitment does not end with delivery. We offer post-project support that includes advice, improvement recommendations and strategic adjustments. This accompaniment ensures that the client can make the most of the results and adapt communication to new needs or changes in the market."
+        },
+        {
+          "question": "How are costs and budgets determined?",
+          "answer": "Costs are determined based on the complexity, scope and timing of the project. We ensure that we present clear and transparent budgets, detailing each phase of the work. This methodology allows us to maintain trust and ensure that the client knows exactly what value they will receive with the investment made."
+        },
+        {
+          "question": "What do I need to prepare before hiring a service?",
+          "answer": "The client only needs to define their main objectives and share relevant information about their company. From there, our team takes care of guiding the entire process. This dynamic reduces the operational burden for the client and allows us to focus on creating adapted solutions that generate real results."
+        }
+      ]
+    }
+  },
+  "home": {
+    "magazine": {
+      "badge": "META MINING MAGAZINE",
+      "title": "Creativity that moves the mining industry",
+      "description": "Discover a space where creativity, technical analysis and sector trends combine to deliver precise, updated and useful information. An indispensable source to always stay up to date with what moves mining.",
+      "button": "know magazine"
+    },
+    "about": {
+      "title": "ABOUT US",
+      "badge": "META MINING MAGAZINE",
+      "subtitle": "Discover who we are",
+      "description": "We are Meta Mining Media (MMM), a digital producer and agency specialized in the mining sector. We were born to connect, inspire and strengthen the industry through creativity, innovation and high-impact content",
+      "button": "Know us"
+    },
+    "team": {
+      "title": "MEET OUR TEAM",
+      "description": "At MMM we combine high-level production and effective marketing, creating relevant and measurable content for the mining industry."
+    },
+    "clients": {
+      "title": "FEATURED CLIENTS"
+    },
+    "chooseUs": {
+      "title": "WHY CHOOSE US?",
+      "items": [
+        {
+          "title": "Mining technical expertise",
+          "description": "Cinema equipment, 360° cameras, drones and personnel with experience in mining operations for safe and impactful productions."
+        },
+        {
+          "title": "High-level audiovisual production",
+          "description": "Cinema equipment, 360° cameras, drones and personnel with experience in mining operations for safe and impactful productions."
+        },
+        {
+          "title": "B2B digital marketing with results",
+          "description": "Cinema equipment, 360° cameras, drones and personnel with experience in mining operations for safe and impactful productions."
+        },
+        {
+          "title": "Integral vision of communication",
+          "description": "Cinema equipment, 360° cameras, drones and personnel with experience in mining operations for safe and impactful productions."
+        }
+      ]
+    },
+    "workflow": {
+      "title": "Our Workflow"
+    },
+    "contact": {
+      "title": "Contact Us"
+    }
+  },
+  "hero": {
+    "slides": [
+      {
+        "subtitle": "Unique creativity",
+        "title": "Mining with Vision",
+        "description": "We create campaigns, content and experiences for mining. Audiovisual, marketing, events, graphics, VR and data — with technical vision and focus on results.",
+        "primaryButton": "Quote your project",
+        "secondaryButton": "Explore services"
+      }
+    ]
+  },
+  "servicesSection": {
+    "title": "DISCOVER OUR SERVICES",
+    "loading": "Loading categories...",
+    "error": "Error loading categories.",
+    "button": "know service"
+  }
+}
+  

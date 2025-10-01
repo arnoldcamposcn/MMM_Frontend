@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import Container from '../layouts/Container'
 import { Breadcrumb } from '../organisms/Breadcrumb'
 import { InformativeBox } from '../organisms/informativeBox'
@@ -9,9 +10,10 @@ import type { servicesSchema } from "../../schema/mmm/types";
 
 
 export const ServicesPage = () => {
+    const { t } = useTranslation();
     const { data, loading, error } = useFetch<servicesSchema[]>(getServices);
-    if (loading) return <p>Cargando servicios...</p>;
-    if (error) return <p>Hubo un error al cargar los servicios.</p>;
+    if (loading) return <p>{t("services.loading")}</p>;
+    if (error) return <p>{t("services.error")}</p>;
 
    
     return (
@@ -22,9 +24,8 @@ export const ServicesPage = () => {
                     <Container>
                         <div className="py-12">
                             <Breadcrumb
-                                title={<>SERVICIOS</>}
-                                path="INICIO / SERVICIOS"
-                                // description="Descubre los servicios que ofrece Meta Mining Media para transformar la comunicación de tu empresa. Desde campañas de marketing digital hasta producciones."
+                                title={<>{t("services.title")}</>}
+                                path={t("services.breadcrumb")}
                             />
                         </div>
                     </Container>
@@ -50,11 +51,11 @@ export const ServicesPage = () => {
                     <Container>
                    <div className="pb-32 px-1">
                 <InformativeBox
-                            title={"Transformamos la comunicación minera en experiencias de alto impacto"}
-                            description="En Meta Mining Media integramos audiovisual, marketing digital, eventos y soluciones especiales para ayudar a empresas mineras y proveedores a comunicar con claridad, innovación y resultados medibles. Nuestro equipo combina rigor técnico con creatividad, asegurando producciones que fortalecen tu marca y generan confianza en la industria."
-                            additionalInfo="+100 proyectos B2B ejecutados con éxito en minería."
-                            primaryButton={{ label: "Cotiza tu proyecto" }}
-                            secondaryButton={{ label: "Explorar servicios" }}
+                            title={t("services.informativeBox.title")}
+                            description={t("services.informativeBox.description")}
+                            additionalInfo={t("services.informativeBox.additionalInfo")}
+                            primaryButton={{ label: t("services.informativeBox.buttons.primary") }}
+                            secondaryButton={{ label: t("services.informativeBox.buttons.secondary") }}
                         />
                     </div>
                     </Container>

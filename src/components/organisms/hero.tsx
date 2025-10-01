@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { Carousel } from "../libraries/carousel/Carousel";
 import SendIcon from "@/assets/icons/arrow.svg";
 import servicio3dImg from "@/assets/services/servicio3d.png";
@@ -13,19 +14,19 @@ interface HeroSlide {
   secondaryButton?: { label: string };
 }
 
-const heroSlides: HeroSlide[] = [
-  {
-    subtitle: "Creatividad única",
-    title: "Minería con Visión ",
-    description:
-      "Creamos campañas, contenidos y experiencias para minería. Audiovisual, marketing, eventos, gráfica, VR y data — con visión técnica y foco en resultados.",
-    image: servicio3dImg,
-    primaryButton: { label: "Cotiza tu proyecto", icon: SendIcon },
-    secondaryButton: { label: "Explorar servicios" },
-  },
-];
-
 export const HeroSection = () => {
+  const { t } = useTranslation();
+  
+  const heroSlides: HeroSlide[] = [
+    {
+      subtitle: t("hero.slides.0.subtitle"),
+      title: t("hero.slides.0.title"),
+      description: t("hero.slides.0.description"),
+      image: servicio3dImg,
+      primaryButton: { label: t("hero.slides.0.primaryButton"), icon: SendIcon },
+      secondaryButton: { label: t("hero.slides.0.secondaryButton") },
+    },
+  ];
   const slides = heroSlides.map((slide, index) => (
     <div
       key={index}

@@ -1,5 +1,6 @@
 // src/components/organisms/ContactForm.tsx
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormInput } from "../molecules/FormInput";
@@ -8,6 +9,8 @@ import { formContactSchema, type formContact } from "../../schema/mmm/types";
 import { postFormContact } from "../../services/articles/article.service";
 
 export const ContactForm: React.FC = () => {
+  const { t } = useTranslation();
+  
   const {
     register,
     handleSubmit,
@@ -29,17 +32,16 @@ export const ContactForm: React.FC = () => {
   return (
     <div className="bg-white p-8 md:p-12 rounded-3xl">
       <h2 className="text-2xl lg:text-3xl font-bold text-grayCustom uppercase">
-        Contacta a nuestros especialistas
+        {t("contact.form.title")}
       </h2>
       <p className="mt-4 text-gray-600">
-        Cuéntanos sobre tu proyecto o consulta y uno de nuestros especialistas
-        te contactará en breve.
+        {t("contact.form.description")}
       </p>
 
       <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-4">
         <FormInput<formContact>
           name="name"
-          placeholder="Ingresar nombres completos"
+          placeholder={t("contact.form.fields.name")}
           register={register}
         />
         {errors.name && (
@@ -48,7 +50,7 @@ export const ContactForm: React.FC = () => {
 
         <FormInput<formContact>
           name="empresa_organizacion"
-          placeholder="Empresa / Organización"
+          placeholder={t("contact.form.fields.company")}
           register={register}
         />
         {errors.empresa_organizacion && (
@@ -59,21 +61,21 @@ export const ContactForm: React.FC = () => {
 
         <FormInput<formContact>
           name="email"
-          placeholder="Correo corporativo"
+          placeholder={t("contact.form.fields.email")}
           register={register}
         />
         {errors.email && (
           <p className="text-red-500 text-sm">{errors.email.message}</p>
         )}
 
-        <FormInput<formContact> name="position" placeholder="Rol" register={register} />
+        <FormInput<formContact> name="position" placeholder={t("contact.form.fields.position")} register={register} />
         {errors.position && (
           <p className="text-red-500 text-sm">{errors.position.message}</p>
         )}
 
         <FormInput<formContact>
           name="website"
-          placeholder="Página web"
+          placeholder={t("contact.form.fields.website")}
           register={register}
         />
         {errors.website && (
@@ -82,7 +84,7 @@ export const ContactForm: React.FC = () => {
 
         <FormInput<formContact>
           name="message"
-          placeholder="Cuéntanos sobre tu proyecto"
+          placeholder={t("contact.form.fields.message")}
           register={register}
         />
         {errors.message && (
@@ -90,7 +92,7 @@ export const ContactForm: React.FC = () => {
         )}
 
         {isSubmitSuccessful && (
-        <p className="text-green-500 text-sm">¡Mensaje enviado!</p>
+        <p className="text-green-500 text-sm">{t("contact.form.success")}</p>
       )}
 
         <Button
@@ -100,10 +102,10 @@ export const ContactForm: React.FC = () => {
           disabled={isSubmitting}
         >
           {isSubmitting
-            ? "Enviando..."
+            ? t("contact.form.buttons.sending")
             : isSubmitSuccessful
-            ? "¡Enviado!"
-            : "Enviar Mensaje"}
+            ? t("contact.form.buttons.sent")
+            : t("contact.form.buttons.send")}
         </Button>
       </form>
     </div>

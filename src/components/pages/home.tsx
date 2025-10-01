@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import Container from "../layouts/Container";
 import Header from "../organisms/Header";
 import { HeroSection } from "../organisms/hero";
@@ -13,17 +14,19 @@ import revistaImg from "@/assets/all/revistamm.png";
 
 
 import { TeamCard } from "../molecules/TeamCard";
-import { teamMembers } from "../../data/team.data";
+// import { teamMembers } from "../../data/team.data";
 import { ContactSection } from "../organisms/ContactSection";
 import ChooseUsSection from '../organisms/ChooseUsSection';
-import { chooseUsData } from '../../data/chooseUs.data';
+import { useChooseUsData } from '../../data/chooseUs.data';
 import TestimonialsSection from '../organisms/TestimonialsSection';
 import flujoImg from "@/assets/all/fluijo.png";
 import { PortfolioSection } from "../organisms/PortfolioSection";
+import { useTeamMembers } from "../../data/team.data";
 
 
 export const HomePage = () => {
- 
+  const { t } = useTranslation();
+  const chooseUsData = useChooseUsData();
 
   return (
     <div className="">
@@ -91,24 +94,21 @@ export const HomePage = () => {
                 <div className="flex flex-col gap-3">
                   <span className="text-sm font-bold uppercase tracking-widest text-gradient inline-flex items-center gap-2">
                     <span className="w-8 h-0.5 bg-gradient-to-r from-[#53C1A9] to-[#4AB39A]"></span>
-                     REVISTA META MINING
+                     {t("home.magazine.badge")}
                   </span>
                   <h2 className="text-3xl lg:text-5xl font-bold text-white uppercase leading-tight">
-                    Creatividad que mueve la 
-                    <span className="text-gradient"> industria minera</span>
+                    {t("home.magazine.title")}
                   </h2>
                 </div>
 
                 <div className="h-1 w-20 bg-gradient-to-r from-[#53C1A9] to-[#4AB39A] rounded-full"></div>
 
                 <p className="text-white/90 text-base leading-relaxed">
-                Descubre un espacio donde creatividad, análisis técnico y tendencias del sector se combinan para entregar
-                <span className="font-semibold text-white"> información precisa, actualizada y útil</span>
-                entregar. Una fuente indispensable para estar siempre al día con lo que mueve la minería.
+                {t("home.magazine.description")}
                 </p>
                 <div className="flex mt-4">
                   <Button variant="gradient" className="uppercase group">
-                    <span>conocer revista</span>
+                    <span>{t("home.magazine.button")}</span>
                     <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
@@ -140,7 +140,7 @@ export const HomePage = () => {
       <section className="min-h-screen flex flex-col items-center justify-center">
         <Container className="w-full">
           <div className="flex flex-col items-center justify-center gap-10 px-8">
-            <h1 className="text-3xl font-bold text-white text-center">NOSOTROS</h1>
+            <h1 className="text-3xl font-bold text-white text-center">{t("home.about.title")}</h1>
 
             <div className="grid grid-cols-1 md:grid-cols-[6fr_5fr] items-center justify-center gap-14">
               <div><img src={nosotrosImg} alt="img1" /></div>
@@ -151,10 +151,10 @@ export const HomePage = () => {
                 <div className="flex flex-col gap-3">
                   <span className="text-sm font-bold uppercase tracking-widest text-gradient inline-flex items-center gap-2">
                     <span className="w-8 h-0.5 bg-gradient-to-r from-[#53C1A9] to-[#4AB39A]"></span>
-                     REVISTA META MINING
+                     {t("home.about.badge")}
                   </span>
                   <h2 className="text-3xl lg:text-4xl font-bold text-white uppercase leading-tight">
-                 Descubre quiénes somos <br/>
+                 {t("home.about.subtitle")} <br/>
                     {/* <span className="text-gradient">el ecosistema minero</span> */}
                   </h2>
                 </div>
@@ -162,12 +162,11 @@ export const HomePage = () => {
                 <div className="h-1 w-20 bg-gradient-to-r from-[#53C1A9] to-[#4AB39A] rounded-full"></div>
 
                 <p className="text-white/90 text-base leading-relaxed">
-                Somos Meta Mining Media (MMM), una productora y agencia digital especializada en el sector minero.
-                 Nacimos para conectar, inspirar y fortalecer la industria mediante <span className="font-semibold text-white">creatividad, innovación y contenidos de alto impacto</span>
+                {t("home.about.description")}
                 </p>
                 <div className="flex mt-4">
                   <Button variant="gradient" className="uppercase group">
-                    <span>Conócenos</span>
+                    <span>{t("home.about.button")}</span>
                     <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
@@ -190,18 +189,17 @@ export const HomePage = () => {
           <div className="flex flex-col items-center justify-center gap-16 px-16">
             <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] items-center justify-center gap-14">
               <div>
-                <h1 className="text-3xl font-bold text-white">CONOCE A NUESTRO <br />
-                  EQUIPO</h1>
+                <h1 className="text-3xl font-bold text-white">{t("home.team.title")}</h1>
               </div>
               <div className="pr-0">
-                <p className="text-white pl-20">En MMM unimos producción de alto nivel y marketing efectivo, creando contenido relevante y medible para la industria minera.</p>
+                <p className="text-white pl-20">{t("home.team.description")}</p>
         </div>
       </div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 items-center justify-center gap-6">
-              {teamMembers.map((item, index) => (
+              {useTeamMembers().map((item, index) => (
                 <TeamCard key={index} member={item.member} image={item.image} />
-              ))}
+              ))} 
             </div>
           </div>
         </Container>
@@ -215,7 +213,7 @@ export const HomePage = () => {
      
      
       <div className="flex flex-col gap-4 items-center justify-center pt-16">
-          <h1 className="text-3xl font-bold text-white text-center">CLIENTES DESTACADOS</h1>
+          <h1 className="text-3xl font-bold text-white text-center">{t("home.clients.title")}</h1>
           <BrandsGrid />
       </div>
     </Container>
@@ -227,7 +225,7 @@ export const HomePage = () => {
 
       <Container>
           <div className="flex flex-col gap-16 px-8">
-          <h1 className="text-white text-center text-3xl font-bold uppercase">¿POR QUÉ ELEGIRNOS?</h1>
+          <h1 className="text-white text-center text-3xl font-bold uppercase">{t("home.chooseUs.title")}</h1>
           <ChooseUsSection 
             data={chooseUsData}
              />
@@ -243,7 +241,7 @@ export const HomePage = () => {
       <section className="min-h-screen flex flex-col items-center justify-center">
         <Container className="w-full">
           <div className="flex flex-col items-center justify-center gap-10 px-8">
-            <h1 className="text-3xl font-bold text-white text-center uppercase">Nuestro Flujo de Trabajo</h1>
+            <h1 className="text-3xl font-bold text-white text-center uppercase">{t("home.workflow.title")}</h1>
  
              <div className="mt-12 flex justify-center">
                <div className="max-w-3xl">
@@ -264,7 +262,7 @@ export const HomePage = () => {
 <section className="  min-h-screen flex flex-col items-center justify-center py-24">
         <Container>
           <div className="flex flex-col gap-16 px-8">
-          <h1 className="text-white text-center text-3xl font-bold uppercase">Contáctanos</h1>
+          <h1 className="text-white text-center text-3xl font-bold uppercase">{t("home.contact.title")}</h1>
           <ContactSection />
           </div>
         </Container>

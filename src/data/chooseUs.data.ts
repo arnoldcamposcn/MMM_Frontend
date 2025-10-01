@@ -1,28 +1,34 @@
+import { useTranslation } from 'react-i18next';
+
 export interface InfoCardData {
   number: string;
   title: string;
   description: string;
 }
 
-export const chooseUsData: InfoCardData[] = [
-  {
-    number: "01",
-    title: "Dominio técnico minero",
-    description: "Equipos de cine, cámaras 360°, drones y personal con experiencia en faenas mineras para producciones seguras y de impacto.",
-  },
-  {
-    number: "02",
-    title: "Producción audiovisual de alto nivel",
-    description: "Equipos de cine, cámaras 360°, drones y personal con experiencia en faenas mineras para producciones seguras y de impacto.",
-  },
-  {
-    number: "03",
-    title: "Marketing digital B2B con resultados",
-    description: "Equipos de cine, cámaras 360°, drones y personal con experiencia en faenas mineras para producciones seguras y de impacto.",
-  },
-  {
-    number: "04",
-    title: "Visión integral de la comunicación",
-    description: "Equipos de cine, cámaras 360°, drones y personal con experiencia en faenas mineras para producciones seguras y de impacto.",
-  },
-];
+export const useChooseUsData = (): InfoCardData[] => {
+  const { t } = useTranslation();
+  
+  return [
+    {
+      number: "01",
+      title: t("home.chooseUs.items.0.title"),
+      description: t("home.chooseUs.items.0.description"),
+    },
+    {
+      number: "02",
+      title: t("home.chooseUs.items.1.title"),
+      description: t("home.chooseUs.items.1.description"),
+    },
+    {
+      number: "03",
+      title: t("home.chooseUs.items.2.title"),
+      description: t("home.chooseUs.items.2.description"),
+    },
+    {
+      number: "04",
+      title: t("home.chooseUs.items.3.title"),
+      description: t("home.chooseUs.items.3.description"),
+    },
+  ];
+};
