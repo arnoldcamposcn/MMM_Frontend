@@ -1,4 +1,6 @@
 // organisms/LoginForm.tsx
+// TODO: Descomentar cuando se necesite autenticación
+/*
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormInput } from "../../components/molecules/FormInput";
@@ -7,8 +9,11 @@ import { type LoginRequest, LoginRequestSchema } from "../../store/features/auth
 import { useAppDispatch, useAppSelector } from "../../hooks/hook";
 import { loginUser } from "../../store/features/auth/authThunks";
 import { useNavigate } from "react-router-dom";
+*/
 
 export function LoginForm() {
+  // TODO: Descomentar cuando se necesite autenticación
+  /*
   const dispatch = useAppDispatch();
   const { loading, error } = useAppSelector((s) => s.auth);
   const navigate = useNavigate();
@@ -49,5 +54,13 @@ export function LoginForm() {
       <Button type="submit">{loading ? "Cargando..." : "Iniciar Sesión"}</Button>
       {error && <p className="text-xs text-red-600 text-center">{error}</p>}
     </form>
+  );
+  */
+  
+  // Placeholder temporal
+  return (
+    <div className="space-y-6">
+      <p className="text-center text-gray-500">Formulario de login - Pendiente de implementar</p>
+    </div>
   );
 }

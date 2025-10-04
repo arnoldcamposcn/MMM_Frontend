@@ -1,4 +1,6 @@
 // organisms/RegisterForm.tsx
+// TODO: Descomentar cuando se necesite autenticación
+/*
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAppDispatch, useAppSelector } from "../../hooks/hook";
@@ -7,12 +9,15 @@ import { RegisterRequestSchema, type RegisterRequest } from "../../store/feature
 import { FormInput } from "../../components/molecules/FormInput";
 import { Button } from "../../components/atoms/Button";
 import { useNavigate } from "react-router-dom";
+*/
 
 interface RegisterFormProps {
   onSuccess?: () => void;
 }
 
 export function RegisterForm({ onSuccess }: RegisterFormProps) {
+  // TODO: Descomentar cuando se necesite autenticación
+  /*
   const dispatch = useAppDispatch();
   const { loading, error } = useAppSelector((state) => state.auth);
   const navigate = useNavigate();
@@ -72,5 +77,13 @@ export function RegisterForm({ onSuccess }: RegisterFormProps) {
 
       {error && <p className="text-center text-red-600 text-sm pt-4">{error}</p>}
     </form>
+  );
+  */
+  
+  // Placeholder temporal
+  return (
+    <div className="space-y-6">
+      <p className="text-center text-gray-500">Formulario de registro - Pendiente de implementar</p>
+    </div>
   );
 }

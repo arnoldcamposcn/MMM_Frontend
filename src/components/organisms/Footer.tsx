@@ -32,6 +32,10 @@ interface FooterProps {
   // Footer bottom
   copyrightText?: string;
   className?: string;
+  
+  // Props adicionales para compatibilidad
+  companyName?: string;
+  description?: string;
 }
 
 const Footer: React.FC<FooterProps> = ({
@@ -58,7 +62,11 @@ const Footer: React.FC<FooterProps> = ({
   onNewsletterSubscribe,
   
   copyrightText,
-  className = ''
+  className = '',
+  
+  // Props adicionales
+  companyName,
+  description
 }) => {
   const { t } = useTranslation();
   
@@ -95,7 +103,7 @@ const Footer: React.FC<FooterProps> = ({
           <div className="md:col-span-6 lg:col-span-3">
           <div className="flex flex-col gap-6">
           <Logo className="text-white" />
-          <p className="paragraph-magazine text-gray-300 text-sm leading-relaxed">{t("footer.description")}</p>
+          <p className="paragraph-magazine text-gray-300 text-sm leading-relaxed">{description || t("footer.description")}</p>
           </div>
            
           </div>
