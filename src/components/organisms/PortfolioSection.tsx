@@ -137,7 +137,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = 
       </div>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-white uppercase text-lg font-medium w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-white uppercase text-lg font-medium w-full items-stretch">
         {visibleData.length === 0 ? (
           <div className="col-span-full text-center normal-case font-normal text-white/80">
             {t("portfolio.section.noProjects")}
@@ -148,6 +148,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = 
               key={item.id}
               image={item.image}
               title={item.title}
+              description={item.short_description}
             />
           ))
         )}

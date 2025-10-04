@@ -60,7 +60,7 @@ export const HomePage = () => {
       <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
         <Container className="w-full">
           
-          <div className="flex flex-col items-center justify-center gap-10 px-8 relative">
+          <div className="flex flex-col items-center justify-center gap-10 px-0 md:px-8 relative">
             
             {/* Objetos decorativos de fondo */}
 
@@ -125,9 +125,7 @@ export const HomePage = () => {
 
       <section className="min-h-screen flex flex-col items-center justify-center">
         <Container>
-        <div className="px-8">
         <PortfolioSection showTitle={true} />
-        </div>
         </Container>
 
        
@@ -139,7 +137,7 @@ export const HomePage = () => {
 
       <section className="min-h-screen flex flex-col items-center justify-center">
         <Container className="w-full">
-          <div className="flex flex-col items-center justify-center gap-10 px-8">
+          <div className="flex flex-col items-center justify-center gap-10 px-0 md:px-8">
             <h1 className="text-3xl font-bold text-white text-center">{t("home.about.title")}</h1>
 
             <div className="grid grid-cols-1 md:grid-cols-[6fr_5fr] items-center justify-center gap-14">
@@ -186,13 +184,13 @@ export const HomePage = () => {
 <div className="bg-gradient-reverse2">
 <section className=" min-h-screen flex flex-col items-center justify-center">
         <Container className="max-w-7xl">
-          <div className="flex flex-col items-center justify-center gap-16 px-16">
+          <div className="flex flex-col items-center justify-center gap-16 px-8 md:px-16">
             <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] items-center justify-center gap-14">
               <div>
-                <h1 className="text-3xl font-bold text-white">{t("home.team.title")}</h1>
+                <h1 className="text-3xl font-bold text-white text-center md:text-left">{t("home.team.title")}</h1>
               </div>
               <div className="pr-0">
-                <p className="text-white pl-20">{t("home.team.description")}</p>
+                <p className="text-white pl-0 md:pl-20 text-center md:text-left">{t("home.team.description")}</p>
         </div>
       </div>
 
@@ -224,7 +222,7 @@ export const HomePage = () => {
 
 
       <Container>
-          <div className="flex flex-col gap-16 px-8">
+          <div className="flex flex-col gap-16 px-0 md:px-8">
           <h1 className="text-white text-center text-3xl font-bold uppercase">{t("home.chooseUs.title")}</h1>
           <ChooseUsSection 
             data={chooseUsData}
@@ -240,7 +238,7 @@ export const HomePage = () => {
 
       <section className="min-h-screen flex flex-col items-center justify-center">
         <Container className="w-full">
-          <div className="flex flex-col items-center justify-center gap-10 px-8">
+          <div className="flex flex-col items-center justify-center gap-10 px-0 md:px-8">
             <h1 className="text-3xl font-bold text-white text-center uppercase">{t("home.workflow.title")}</h1>
  
              <div className="mt-12 flex justify-center">
@@ -261,7 +259,7 @@ export const HomePage = () => {
 
 <section className="  min-h-screen flex flex-col items-center justify-center py-24">
         <Container>
-          <div className="flex flex-col gap-16 px-8">
+          <div className="flex flex-col gap-16 px-0 md:px-8">
           <h1 className="text-white text-center text-3xl font-bold uppercase">{t("home.contact.title")}</h1>
           <ContactSection />
           </div>

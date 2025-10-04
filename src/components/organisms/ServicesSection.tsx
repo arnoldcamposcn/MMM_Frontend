@@ -77,7 +77,7 @@ export const ServicesSection = () => {
   if (error) return <p className="text-white text-center">{t("servicesSection.error")}</p>;
 
   return (
-    <div className="flex flex-col items-center justify-center px-8 w-full">
+    <div className="flex flex-col items-center justify-center px-0 md:px-8 w-full">
       <h1 className="text-3xl font-bold text-white text-center pb-12">
         {t("servicesSection.title")}
       </h1>
@@ -116,9 +116,8 @@ export const ServicesSection = () => {
                   {groupedServices[category].map((service) => (
                     <li 
                       key={service.id}
-                      className="text-gray-700 hover:text-blue-500 normal-case whitespace-nowrap cursor-pointer"
-                      onClick={() => handleServiceClick(service)}
-                    >
+                      className="text-gray-700 hover:text-green-700 normal-case whitespace-nowrap cursor-pointer"
+                      onClick={() => handleServiceClick(service)}>
                       {service.title}
                     </li>
                   ))}

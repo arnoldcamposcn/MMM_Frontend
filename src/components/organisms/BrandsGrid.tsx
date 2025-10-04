@@ -38,7 +38,7 @@ interface Brand {
           </div>
     
           {/* Grid de logos */}
-          <div className="flex items-center justify-center gap-16">
+          <div className="flex items-center justify-center md:flex-row flex-col gap-16">
             {logos.map((logo, index) => (
               <img
                 key={index}

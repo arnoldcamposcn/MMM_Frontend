@@ -10,13 +10,8 @@ const InfoCard: React.FC<InfoCardProps> = ({ number, title, description }) => {
   return (
     <div className="flex flex-col gap-5 bg-grayCustom py-14 px-10 rounded-3xl">
       <div>
-        <h2 className="text-white text-2xl font-bold uppercase">
-          {title.split(' ').map((word, index) => (
-            <React.Fragment key={index}>
-              {word}
-              {index === 1 && <br />}
-            </React.Fragment>
-          ))}
+        <h2 className="text-white text-2xl font-bold uppercase w-auto pr-0 md:pr-24">
+          {title}
         </h2>
       </div>
       <div className="flex flex-col md:flex-row items-center gap-10">

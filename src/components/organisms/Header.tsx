@@ -20,18 +20,30 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const languages: Language[] = [
-    { code: "es", name: t("language.spanish") },
-    { code: "en", name: t("language.english") },
+    { code: "ES", name: t("language.spanish") },
+    { code: "US", name: t("language.english") },
   ];
 
   const [selectedLang, setSelectedLang] = useState<Language>(() => {
     const currentLang = i18n.language || "es";
-    return languages.find(lang => lang.code === currentLang) || languages[0];
+    // Mapear códigos de idioma a códigos de país
+    const langToCountry: Record<string, string> = {
+      "es": "ES",
+      "en": "US"
+    };
+    const countryCode = langToCountry[currentLang] || "ES";
+    return languages.find(lang => lang.code === countryCode) || languages[0];
   });
 
   const handleLangChange = (lang: Language) => {
     setSelectedLang(lang);
-    i18n.changeLanguage(lang.code);
+    // Mapear códigos de país a códigos de idioma
+    const countryToLang: Record<string, string> = {
+      "ES": "es",
+      "US": "en"
+    };
+    const languageCode = countryToLang[lang.code] || "es";
+    i18n.changeLanguage(languageCode);
   };
 
   useEffect(() => {

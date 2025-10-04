@@ -1,6 +1,7 @@
 // src/hooks/useFetch.ts
 import { useState, useEffect, useCallback } from "react";
 
+
 export function useFetch<T>(fetchFn: () => Promise<T>, deps: any[] = []) {
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState(true);

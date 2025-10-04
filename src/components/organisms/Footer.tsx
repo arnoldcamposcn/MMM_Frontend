@@ -88,12 +88,12 @@ const Footer: React.FC<FooterProps> = ({
   return (
     <footer className={`bg-grayCustom text-white ${className}`}>
       {/* Contenido principal del footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 py-14">
+        <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-8">
           
           {/* Columna 1: Logo */}
           <div className="md:col-span-6 lg:col-span-3">
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-6">
           <Logo className="text-white" />
           <p className="paragraph-magazine text-gray-300 text-sm leading-relaxed">{t("footer.description")}</p>
           </div>

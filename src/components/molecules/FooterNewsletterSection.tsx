@@ -25,7 +25,7 @@ const FooterNewsletterSection: React.FC<FooterNewsletterSectionProps> = ({
       <h3 className="paragraph-magazine text-white font-semibold mb-6 text-base uppercase tracking-wide">
         {title}
       </h3>
-      <p className="paragraph-magazine text-gray-300 mb-6 text-sm leading-relaxed">
+      <p className="paragraph-magazine text-gray-300 mb-8 text-sm leading-relaxed">
         {description}
       </p>
       <NewsletterInput 

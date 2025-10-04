@@ -4,9 +4,23 @@ import type { formContact, newsletter, portfolio, testimonials } from "../../sch
 import type { informationService } from "../../schema/mmm/types";
 import type { servicesSchema } from "../../schema/mmm/types";
 
-export const getPortfolio = async (): Promise<portfolio[]> => {
-  const data = await apiClient.get<portfolio[]>("/portfolio/items");
+export const getPortfolio = async (language: string = 'es'): Promise<portfolio[]> => {
+  const data = await apiClient.get<portfolio[]>("/portfolio/items", {
+    headers: {
+      'Accept-Language': language
+    }
+  });
   return data;
+};
+
+
+// Funciones específicas por idioma
+export const getPortfolioSpanish = async (): Promise<portfolio[]> => {
+  return getPortfolio('en');
+};
+
+export const getPortfolioEnglish = async (): Promise<portfolio[]> => {
+  return getPortfolio('en');
 };
 
 

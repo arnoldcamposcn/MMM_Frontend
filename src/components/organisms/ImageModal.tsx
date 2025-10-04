@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface ImageModalProps {
   isOpen: boolean;
@@ -7,44 +8,36 @@ interface ImageModalProps {
 }
 
 export const ImageModal: React.FC<ImageModalProps> = ({ isOpen, onClose, imageUrl }) => {
-  const [isClosing, setIsClosing] = useState(false);
-
-  useEffect(() => {
-    if (!isOpen) {
-      setIsClosing(false);
-    }
-  }, [isOpen]);
-
-  const handleClose = () => {
-    setIsClosing(true);
-  };
-
-  const onAnimationEnd = () => {
-    if (isClosing) {
-      onClose();
-    }
-  };
-
-  if (!isOpen) {
-    return null;
-  }
-
   return (
-    <div className="modal-overlay" onClick={handleClose}>
-      <div
-        className={`modal-content ${isClosing ? 'modal-close' : 'modal-open'}`}
-        onAnimationEnd={onAnimationEnd}
-        onClick={(e) => e.stopPropagation()} 
-      >
-        <button
-          onClick={handleClose}
-          className="absolute -top-2 -right-10 text-white text-5xl font-bold z-20"
-          aria-label="Cerrar modal"
+    <AnimatePresence>
+      {isOpen ? (
+        <motion.div 
+          key="modal"
+          className="modal-overlay"
+          onClick={onClose}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
         >
-          &times;
-        </button>
-        <img src={imageUrl} alt="Portfolio" className="w-full h-auto object-contain max-h-[85vh] rounded-lg" />
-      </div>
-    </div>
+          <motion.div
+            className="modal-content"
+            onClick={(e) => e.stopPropagation()}
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.5, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          >
+            <button
+              onClick={onClose}
+              className="absolute -top-2 -right-10 text-white text-5xl font-bold z-20"
+              aria-label="Cerrar modal"
+            >
+              &times;
+            </button>
+            <img src={imageUrl} alt="Portfolio" className="w-[600px] h-[400px] object-cover rounded-lg" />
+          </motion.div>
+        </motion.div>
+      ) : null}
+    </AnimatePresence>
   );
 };
