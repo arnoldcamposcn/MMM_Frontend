@@ -5,19 +5,17 @@ FROM node:20-alpine AS build-stage
 
 WORKDIR /app
 
-# 1. Copia solo los archivos de dependencias
+# 1. Copia solo los archivos de dependencias (para caché)
 COPY package.json package-lock.json ./
 
-# 2. INSTALA LAS DEPENDENCIAS
+# 2. INSTALA LAS DEPENDENCIAS (CORREGIDO: Usa npm ci)
 RUN npm ci
 
 # 3. Copia el resto del código fuente
 COPY . .
 
-# 4. Ejecuta SOLO la compilación de Vite.
-# ESTE ES EL CAMBIO CLAVE: Ejecutamos directamente 'vite build' para evitar 
-# el chequeo estricto de 'tsc -b' que estaba fallando por las dependencias de swiper/css.
-RUN vite build
+# 4. COMPILACIÓN (CORREGIDO: Usa npm run build para ejecutar el script de package.json)
+RUN npm run build
 
 
 # ==================================
