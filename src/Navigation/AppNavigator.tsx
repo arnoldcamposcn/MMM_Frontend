@@ -23,9 +23,6 @@ const AppNavigator = () => {
             {/* <Route path="/servicios/:slug" element={<InformationServicePage />} /> */}
             <Route path="/servicios/:slug" element={<InformationServicePage/>} />
 
-
-
-
         </Routes>
       </MainLayout>
     </BrowserRouter>

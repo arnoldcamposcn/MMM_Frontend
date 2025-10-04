@@ -26,6 +26,9 @@ FROM nginx:stable-alpine AS production-stage
 # Copia los archivos compilados.
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 
+# Copia la configuración personalizada de Nginx
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
 EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
