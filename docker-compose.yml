@@ -3,10 +3,10 @@ version: "3.9"
 services:
   react-app:
     build: .
-    container_name: react-tailwind-container
+    container_name: mmm_frontend_container # Cambiado a un nombre más claro
+    # Mapea el puerto 3000 del VPS al puerto 80 INTERNO del contenedor (Nginx)
     ports:
-      - "5173:5173"   # Usamos el puerto del dev server
-    volumes:
-      - .:/app        # Monta tu código en el contenedor
-      - /app/node_modules  # Evita sobrescribir node_modules
-    command: npm run dev
+      - "3000:80" 
+    # Eliminamos el volumen de código y node_modules, ya que la construcción es estática y el código no cambia en runtime.
+    # Eliminamos 'command: npm run dev' ya que Nginx es el CMD.
+    restart: always

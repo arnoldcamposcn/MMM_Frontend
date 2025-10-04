@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Carousel } from "../libraries/carousel/Carousel";
 import SendIcon from "@/assets/icons/arrow.svg";
-// import servicio3dImg from "@/assets/services/servicio3d.png";
 import { Button } from "../atoms/Button";
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
