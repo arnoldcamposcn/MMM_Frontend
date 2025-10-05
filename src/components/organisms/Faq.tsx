@@ -8,7 +8,7 @@ interface FaqProps {
 
 const Faq: React.FC<FaqProps> = ({ data }) => {
   return (
-    <div className="w-full mx-auto">
+    <div>
       <div className="flex flex-col gap-4">
         {data.map((item, index) => (
           <FaqItem key={index} question={item.question} answer={item.answer} />

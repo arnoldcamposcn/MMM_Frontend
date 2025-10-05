@@ -19,10 +19,10 @@ export const ServicesPage = () => {
     return (
         <>
             <main>
-                <section className="bg-gradient min-h-screen flex flex-col">
-                    <Header className="relative z-10" />
+                <section className="bg-gradient">
+                    <Header />
                     <Container>
-                        <div className="py-12">
+                    <div className=" pt-24 md:pt-24 pb-8 md:pb-12">
                             <Breadcrumb
                                 title={<>{t("services.title")}</>}
                                 path={t("services.breadcrumb")}
@@ -32,8 +32,8 @@ export const ServicesPage = () => {
 
 
                     <Container>
-                        <div className="pb-24 pt-12 px-1">
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch justify-center gap-6 px-4 sm:px-8 md:px-16">
+                        <div className="pb-12 md:pb-32 lg:pb-24 pt-4 md:pt-8 lg:pt-4 px-1">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch justify-center gap-6 px-2 md:px-8 lg:px-16">
                                 {data?.map((service, index) => (
                                     <ServiceCard 
                                         key={index} 
@@ -48,8 +48,8 @@ export const ServicesPage = () => {
 
 
 
-                    <Container>
-                   <div className="pb-32 px-1">
+                <Container>
+                   <div className="pb-12 md:pb-24 lg:pb-24 px-1">
                 <InformativeBox
                             title={t("services.informativeBox.title")}
                             description={t("services.informativeBox.description")}

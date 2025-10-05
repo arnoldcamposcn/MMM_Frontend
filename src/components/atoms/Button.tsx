@@ -13,7 +13,7 @@ export const Button: React.FC<ButtonProps> = ({
   className,
   ...props
 }) => {
-  const baseClasses = "text-[14px] font-medium flex items-center justify-center gap-2";
+  const baseClasses = "text-[14px] font-medium flex items-center justify-center gap-2 cursor-pointer relative";
   
   const variantClasses = {
     gradient: "btn-gradient",
@@ -23,6 +23,7 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button
       className={`${baseClasses} ${variantClasses[variant]} ${className}`}
+      type="button"
       {...props}
     >
       {children}

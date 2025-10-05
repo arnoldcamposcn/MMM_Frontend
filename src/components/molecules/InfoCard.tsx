@@ -8,9 +8,9 @@ interface InfoCardProps {
 
 const InfoCard: React.FC<InfoCardProps> = ({ number, title, description }) => {
   return (
-    <div className="flex flex-col gap-5 bg-grayCustom py-14 px-10 rounded-3xl">
+    <div className="flex flex-col gap-5 bg-grayCustom py-8 md:py-14 px-8 md:px-14 rounded-3xl">
       <div>
-        <h2 className="text-white text-2xl font-bold uppercase w-auto pr-0 md:pr-24">
+        <h2 className="text-white text-xl md:text-2xl font-bold uppercase w-auto pr-0 md:pr-24 text-center md:text-left">
           {title}
         </h2>
       </div>
@@ -19,7 +19,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ number, title, description }) => {
           <span className="text-[150px] font-bold text-gradient leading-[0.5]">{number}</span>
         </div>
         <div className="max-w-md">
-          <p className="text-sm md:text-base font-normal whitespace-pre-wrap">
+          <p className="text-sm md:text-base font-normal whitespace-pre-wrap text-center md:text-left">
             {description}
           </p>
         </div>

@@ -78,30 +78,35 @@ export const ServicesSection = () => {
 
   return (
     <div className="flex flex-col items-center justify-center px-0 md:px-8 w-full">
-      <h1 className="text-3xl font-bold text-white text-center pb-12">
+      <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white text-center pb-8 md:pb-12">
         {t("servicesSection.title")}
       </h1>
       
 
-      <div className={`relative uppercase text-white font-medium py-2 px-0 ${
+      <div className={`relative uppercase text-white font-medium py-2 px-0 w-full ${
         isMobile
-          ? 'flex w-full gap-4'
-          : 'flex flex-wrap items-center justify-center gap-6'
+          ? 'flex flex-col gap-2'
+          : 'flex flex-wrap items-center justify-center gap-4 lg:gap-6'
       }`}>
         {Object.keys(groupedServices).map((category) => (
           <div 
             key={category} 
-            className="relative"
+            className={`relative ${isMobile ? 'w-full' : ''}`}
             onMouseEnter={() => handleMouseEnter(category)}
             onMouseLeave={handleMouseLeave}
             onClick={() => handleCategoryClick(category)}
           >
             <div
               className={`
-                menu-services cursor-pointer pb-1 whitespace-nowrap
+                menu-services cursor-pointer pb-1 text-sm md:text-base lg:text-lg
+                ${isMobile ? 'w-full text-center py-2 border-b border-gray-600' : 'whitespace-nowrap'}
                 ${activeCategory === category && isOpen
-                  ? 'border-b-2 border-white'
-                  : 'border-b-2 border-transparent hover:border-gray-300'}
+                  ? isMobile 
+                    ? 'border-b-2 border-white bg-gray-800/50' 
+                    : 'border-b-2 border-white'
+                  : isMobile
+                    ? 'border-b border-transparent hover:border-gray-400'
+                    : 'border-b-2 border-transparent hover:border-gray-300'}
               `}
             >
               {category}
@@ -109,14 +114,15 @@ export const ServicesSection = () => {
             <div
               className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 transition-all duration-500 ease-in-out overflow-hidden z-10 ${
                 activeCategory === category && isOpen ? 'max-h-96' : 'max-h-0'
-              }`}
+              } ${isMobile ? 'w-full' : ''}`}
             >
-              <div className="bg-white p-4 shadow-lg rounded-sm w-max">
-                <ul className="space-y-2">
+              <div className={`bg-white p-4 shadow-lg rounded-sm ${isMobile ? 'w-full' : 'w-max'}`}>
+                <ul className={`${isMobile ? 'space-y-3' : 'space-y-2'}`}>
                   {groupedServices[category].map((service) => (
                     <li 
                       key={service.id}
-                      className="text-gray-700 hover:text-green-700 normal-case whitespace-nowrap cursor-pointer"
+                      className={`text-gray-700 hover:text-green-700 normal-case cursor-pointer transition-colors
+                        ${isMobile ? 'text-center py-2 border-b border-gray-200 last:border-b-0' : 'whitespace-nowrap'}`}
                       onClick={() => handleServiceClick(service)}>
                       {service.title}
                     </li>
@@ -129,32 +135,36 @@ export const ServicesSection = () => {
       </div>
 
       {activeService && (
-        <div className="grid grid-cols-1 md:grid-cols-[6fr_5fr] items-center justify-center gap-14 mt-12">
-          <div>
-            <img src={activeService.image} alt={activeService.title} className="rounded-lg object-cover w-full h-auto" />
+        <div className="grid grid-cols-1 lg:grid-cols-[6fr_5fr] items-center justify-center gap-8 lg:gap-14 mt-8 md:mt-12 w-full">
+          <div className="order-1 lg:order-1">
+            <img 
+              src={activeService.image} 
+              alt={activeService.title} 
+              className="rounded-lg object-cover w-full h-auto max-w-md mx-auto lg:max-w-none" 
+            />
           </div>
-          <div className="flex flex-col gap-4">
-          
-
-            <span className="text-sm font-bold uppercase tracking-widest text-gradient inline-flex items-center gap-2">
-                    <span className="w-6 h-0.5 bg-gradient-to-r from-[#53C1A9] to-[#4AB39A]"></span>
-                    {activeService.category.name}
-                  </span>
+          <div className="flex flex-col gap-4 lg:gap-6 order-2 lg:order-2 px-0 lg:px-0">
+            <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-gradient inline-flex items-center gap-2">
+              <span className="w-6 h-0.5 bg-gradient-to-r from-[#53C1A9] to-[#4AB39A]"></span>
+              {activeService.category.name}
+            </span>
             
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white uppercase leading-tight">
+              {activeService.title}
+            </h2>
             
-            <h2 className="text-4xl font-semibold text-white uppercase">{activeService.title}</h2>
-            <p className="text-white text-justify">
+            <p className="text-white text-justify text-sm md:text-base leading-relaxed">
               {activeService.description}
             </p>
             
-            <div className="flex mt-2">
+            <div className="flex justify-center lg:justify-start mt-2 md:mt-4">
               <Link to={`/servicios/${activeService.slug}`}>
-                <Button variant="gradient" className="uppercase group">
-                    <span>{t("servicesSection.button")}</span>
-                    <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </Button>
+                <Button variant="gradient" className="uppercase group text-sm md:text-base px-6 py-3">
+                  <span>{t("servicesSection.button")}</span>
+                  <svg className="w-4 h-4 md:w-5 md:h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Button>
               </Link>
             </div>
           </div>

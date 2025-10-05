@@ -11,12 +11,12 @@ export const ContactPage = () => {
   
   return (
     <section className="bg-gradient min-h-screen flex flex-col">
-      <Header className="relative z-10" />
+      <Header />
 
       <main>
         <Container>
-          <div className="py-12">
-            <Breadcrumb
+        <div className=" pt-24 md:pt-24 pb-8 md:pb-12">
+        <Breadcrumb
               title={<>{t("contact.title")}</>}
               path={t("contact.breadcrumb")}
               // description={t("contact.description")}
@@ -25,7 +25,7 @@ export const ContactPage = () => {
         </Container>
 
         <Container>
-          <div className="pb-24">
+          <div className="pb-0 md:pb-4 lg:pb-24">
             <div className="flex flex-col items-center justify-center gap-16 px-0 md:px-4 lg:px-8">
               <ContactSection />
             </div>

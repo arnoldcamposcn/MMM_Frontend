@@ -117,7 +117,7 @@
       "description": "At Meta Mining Media we are ready to accompany you in creating audiovisual, digital and event solutions that transform your company's communication. Write to us and receive clear, fast and no-obligation advice.",
       "contactInfo": {
         "contactUs": "contact us",
-        "phone": "+51 919-543-397",
+        "phone": "+51 919-543-393",
         "location": "location",
         "address": "Av. Miraflores 123, Lima, Perú",
         "email": "email",
@@ -247,7 +247,7 @@
     },
     "about": {
       "title": "ABOUT US",
-      "badge": "META MINING MAGAZINE",
+      "badge": "MINING MEDIA KNOW META",
       "subtitle": "Discover who we are",
       "description": "We are Meta Mining Media (MMM), a digital producer and agency specialized in the mining sector. We were born to connect, inspire and strengthen the industry through creativity, innovation and high-impact content",
       "button": "Know us"
@@ -299,7 +299,7 @@
     ]
   },
   "servicesSection": {
-    "title": "DISCOVER OUR SERVICES",
+    "title": "OUR SERVICES",
     "loading": "Loading categories...",
     "error": "Error loading categories.",
     "button": "know service"

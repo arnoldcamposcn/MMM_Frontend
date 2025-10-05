@@ -4,6 +4,7 @@ import SendIcon from "@/assets/icons/arrow.svg";
 import { Button } from "../atoms/Button";
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 interface HeroSlide {
@@ -52,7 +53,7 @@ const ImageLoop = () => {
 
 export const HeroSection = () => {
   const { t } = useTranslation();
-  
+  const navigate = useNavigate();
   const heroSlides: HeroSlide[] = [
     {
       subtitle: t("hero.slides.0.subtitle"),
@@ -81,7 +82,8 @@ export const HeroSection = () => {
           <p className="text-sm md:text-base pb-2">{slide.description}</p>
 
           <div className="flex flex-col sm:flex-row md:flex-row gap-3 md:gap-[14px] items-center md:items-start">
-            <Button variant="gradient" className="w-full sm:w-auto">
+            
+            <Button variant="gradient" className="w-full sm:w-auto" onClick={() => navigate("/contacto")}>
               {slide.primaryButton.label}
               {slide.primaryButton.icon && (
                 <img
@@ -94,7 +96,7 @@ export const HeroSection = () => {
             
 
             {slide.secondaryButton && (
-              <Button variant="outline" className="w-full sm:w-auto">
+              <Button variant="outline" className="w-full sm:w-auto" onClick={() => navigate("/servicios")}>
                 {slide.secondaryButton.label}
               </Button>
             )}

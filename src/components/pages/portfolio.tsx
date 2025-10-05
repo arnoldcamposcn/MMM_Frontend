@@ -21,12 +21,12 @@ export const PortfolioPage = () => {
   return (
     <>
       <section className="bg-gradient min-h-screen flex flex-col">
-        <Header className="relative z-10" />
+        <Header />
 
         <main>
           <Container>
-            <div className="py-12">
-              <Breadcrumb
+          <div className=" pt-24 md:pt-24 pb-8 md:pb-12">
+          <Breadcrumb
                 title={<>{t("portfolio.title")}</>}
                 path={t("portfolio.breadcrumb")}
               />
@@ -34,7 +34,7 @@ export const PortfolioPage = () => {
           </Container>
 
           <Container>
-            <div className="pb-24 md:pb-24 lg:pb-24 px-0 md:px-16">
+            <div className="pb-24 md:pb-24 lg:pb-24 px-0 md:px-4 lg:px-16">
               {loading && <p className="text-center text-white">{t("portfolio.loading")}</p>}
               {error && <p className="text-center text-white">{t("portfolio.error")}</p>}
               {portfolioItems && <PortfolioSection />}

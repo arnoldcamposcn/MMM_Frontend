@@ -55,9 +55,9 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = 
   if (error) return <p className="text-center text-white">{t("portfolio.section.error")}</p>;
 
   return (
-    <div className="flex flex-col items-center justify-center gap-10">
+    <div className="flex flex-col items-center justify-center gap-6 md:gap-10">
       {showTitle && (
-        <h1 className="text-3xl font-bold text-white text-center uppercase">
+        <h1 className="text-2xl md:text-3xl font-bold text-white text-center uppercase">
           {t("portfolio.section.title")}
         </h1>
       )}
@@ -155,7 +155,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = 
       </div>
 
       {/* Botones condicionales */}
-      <div className="flex flex-col items-center gap-4 mt-6">
+      <div className="flex flex-col items-center gap-4 mt-0 md:mt-5">
         {visibleCount < filtered.length && (
           <Button
             variant="gradient"

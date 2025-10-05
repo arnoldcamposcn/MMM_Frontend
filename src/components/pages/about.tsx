@@ -15,22 +15,21 @@ export const AboutPage = () => {
     const teamMembers = useTeamMembers();
     
     return (
-        <section className="bg-gradient min-h-screen flex flex-col ">
-            <Header className="relative z-10" />
+        <section className="bg-gradient min-h-screen flex flex-col">
+            <Header />
             <main>
                 <Container>
-                    <div className="py-8 md:py-8 lg:py-12">
+                    <div className=" pt-24 md:pt-24 pb-8 md:pb-12">
                         <Breadcrumb
                             title={<>{t("about.title").toUpperCase()}</>}
                             path={t("about.breadcrumb")}
-                        // description="Explora los proyectos que hemos realizado y descubre cómo transformamos ideas en resultados impactantes para la industria minera."
                         />
                     </div>
 
-                    <div className="flex flex-col items-center justify-center gap-8 px-0 md:px-0 lg:px-8">
+                    <div className="flex flex-col items-center justify-center gap-4 px-0 md:px-0 lg:px-8">
                         <div className="grid grid-cols-1 md:grid-cols-[6fr_5fr] items-center justify-center gap-14">
                             <div><img src={nosotrosImg} alt="img1" /></div>
-                            <div className="flex flex-col gap-4">
+                            <div className="flex flex-col gap-6 md:gap-6">
                                 <h1 className="title-text">{t("about.title")}</h1>
                                 <p className="text-paragraph">{t("about.description")}</p>
                             </div>
@@ -44,12 +43,12 @@ export const AboutPage = () => {
 
                 {/* nuestro proposito  */}
                 <Container>
-                    <div className="flex flex-col items-center justify-center gap-14 px-8 pt-20">
+                    <div className="flex flex-col items-center justify-center gap-12 md:gap-14 px-8 pt-20">
                         <div className="text-center">
-                            <h2 className="text-3xl font-semibold text-white uppercase">{t("about.purpose.title")}</h2>
+                            <h2 className="text-2xl md:text-3xl font-semibold text-white uppercase">{t("about.purpose.title")}</h2>
                         </div>
 
-                        <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                        <div className="grid md:grid-cols-2 gap-6 md:gap-6 max-w-3xl mx-auto">
                             {/* Misión Card */}
                             <div className="flex flex-col gap-4 justify-center text-center rounded-2xl px-8 py-16 gradient-card">
                                 <h1 className="text-2xl font-semibold text-white uppercase">{t("about.purpose.mission.title")}</h1>
@@ -73,7 +72,7 @@ export const AboutPage = () => {
 
 
                 <Container className="pb-24">
-                    <div className="flex flex-col items-stretch md:items-stretch lg:items-center justify-center gap-8 md:gap-16 side-spaces">
+                    <div className="flex flex-col items-stretch md:items-stretch lg:items-center justify-center gap-12 md:gap-16 side-spaces">
                         <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] items-center justify-center gap-4 md:gap-14">
                             <div>
                                 <h1 className="title-text text-center md:text-left">{t("about.team.title")}</h1>

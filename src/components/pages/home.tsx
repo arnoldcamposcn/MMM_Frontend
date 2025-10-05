@@ -5,16 +5,10 @@ import { HeroSection } from "../organisms/hero";
 import { BrandsGrid } from "../organisms/BrandsGrid";
 import objectImg from "@/assets/cover/object.png";
 import { ServicesSection } from '../organisms/ServicesSection';
-// import serviceAudiovisual from "@/assets/services/audiovisual.png";
 import { Button } from "../atoms/Button";
-// import iconService from "@/assets/icons/icon-service.png";
 import nosotrosImg from "@/assets/all/nosotros.png";
 import revistaImg from "@/assets/all/revistamm.png";
-
-
-
 import { TeamCard } from "../molecules/TeamCard";
-// import { teamMembers } from "../../data/team.data";
 import { ContactSection } from "../organisms/ContactSection";
 import ChooseUsSection from '../organisms/ChooseUsSection';
 import { useChooseUsData } from '../../data/chooseUs.data';
@@ -22,49 +16,104 @@ import TestimonialsSection from '../organisms/TestimonialsSection';
 import flujoImg from "@/assets/all/fluijo.png";
 import { PortfolioSection } from "../organisms/PortfolioSection";
 import { useTeamMembers } from "../../data/team.data";
+import { useNavigate } from 'react-router-dom';
 
 
 export const HomePage = () => {
   const { t } = useTranslation();
   const chooseUsData = useChooseUsData();
-
+  const navigate = useNavigate();
   return (
     <div className="">
-      <section className="">
-      {/* <Header className="relative z-10" /> */}
-        <div className="bg-gradient min-h-screen flex flex-col">
-        <Header className="relative z-10" />
-        
+      <Header />
+      <section className="bg-gradient min-h-screen flex flex-col pt-24">
         <main className="flex-grow flex items-center">
           <Container className="w-full">
             <HeroSection />
             <img src={objectImg} alt="object" className="w-auto h-auto absolute bottom-0 right-0 img-fade-left" />
           </Container>
         </main>
-        <BrandsGrid />
+        <div className="pt-10 md:pb-0">
+          <BrandsGrid />
         </div>
-
-
-
-      <div className="bg-gradient-inverted">
-      <section className="min-h-screen flex flex-col items-center justify-center">
-        <Container className="w-full">
-          <ServicesSection />
-        </Container>
       </section>
 
+      <div className="bg-gradient-inverted">
+        <section className="flex flex-col items-center justify-center py-20 md:py-40">
+          <Container>
+            <ServicesSection />
+          </Container>
+        </section>
+
+
+
+        <section className="flex flex-col items-center justify-center">
+          <Container>
+            <div className="px-0 md:px-8">
+              <PortfolioSection showTitle={true} />
+            </div>
+          </Container>
+        </section>
+
+
+
+
+        
+      <div>
+        <section className="flex flex-col items-center justify-center py-20 md:py-40">
+          <Container className="w-full">
+            <div className="flex flex-col items-center justify-center gap-6 md:gap-10 px-0 md:px-8">
+              <h1 className="text-2xl md:text-3xl font-bold text-white text-center">{t("home.about.title")}</h1>
+
+            <div className="grid grid-cols-1 md:grid-cols-[6fr_5fr] items-center justify-center gap-14">
+              <div><img src={nosotrosImg} alt="img1" /></div>
+
+
+              <div className="flex flex-col gap-4">
+               <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-3">
+                  <span className="text-sm font-bold uppercase tracking-widest text-gradient inline-flex items-center gap-2">
+                    <span className="w-8 h-0.5 bg-gradient-to-r from-[#53C1A9] to-[#4AB39A]"></span>
+                     {t("home.about.badge")}
+                  </span>
+                  <h2 className="text-2xl md:text-3xl font-bold text-white uppercase leading-tight">
+                 {t("home.about.subtitle")} <br/>
+                    {/* <span className="text-gradient">el ecosistema minero</span> */}
+                  </h2>
+                </div>
+
+                <div className="h-1 w-20 bg-gradient-to-r from-[#53C1A9] to-[#4AB39A] rounded-full"></div>
+
+                <p className="text-white text-base leading-relaxed">
+                {t("home.about.description")}
+                </p>
+                <div className="flex mt-0 md:mt-4">
+                  <Button variant="gradient" className="uppercase group" onClick={() => navigate("/nosotros")}>
+                    <span>{t("home.about.button")}</span>
+                    <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </Button>
+                </div>
+              </div>
+              </div>
+            </div>
+            </div>
+          </Container>
+        </section>
+      </div>
 
 
 
       {/* Revista meta mining  */}
-      <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
-        <Container className="w-full">
+      <section className="flex flex-col items-center justify-center relative overflow-hidden">
+        <Container className="w-full ">
           
           <div className="flex flex-col items-center justify-center gap-10 px-0 md:px-8 relative">
             
             {/* Objetos decorativos de fondo */}
 
-            <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] items-center justify-center gap-16 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] items-center justify-center gap-6 md:gap-16 relative z-10">
               {/* Imagen con objetos decorativos */}
               <div className="relative">
                 {/* Círculo decorativo detrás */}
@@ -96,17 +145,17 @@ export const HomePage = () => {
                     <span className="w-8 h-0.5 bg-gradient-to-r from-[#53C1A9] to-[#4AB39A]"></span>
                      {t("home.magazine.badge")}
                   </span>
-                  <h2 className="text-3xl lg:text-5xl font-bold text-white uppercase leading-tight">
+                  <h2 className="text-2xl md:text-3xl font-bold text-white uppercase leading-tight">
                     {t("home.magazine.title")}
                   </h2>
                 </div>
 
                 <div className="h-1 w-20 bg-gradient-to-r from-[#53C1A9] to-[#4AB39A] rounded-full"></div>
 
-                <p className="text-white/90 text-base leading-relaxed">
+                <p className="text-white text-base leading-relaxed">
                 {t("home.magazine.description")}
                 </p>
-                <div className="flex mt-4">
+                <div className="flex mt-2 md:mt-4">
                   <Button variant="gradient" className="uppercase group">
                     <span>{t("home.magazine.button")}</span>
                     <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -119,75 +168,18 @@ export const HomePage = () => {
           </div>
         </Container>
       </section>
-
-
-      
-
-      <section className="min-h-screen flex flex-col items-center justify-center">
-        <Container>
-        <PortfolioSection showTitle={true} />
-        </Container>
-
-       
-      </section>
-
-     
-
-      
-
-      <section className="min-h-screen flex flex-col items-center justify-center">
-        <Container className="w-full">
-          <div className="flex flex-col items-center justify-center gap-10 px-0 md:px-8">
-            <h1 className="text-3xl font-bold text-white text-center">{t("home.about.title")}</h1>
-
-            <div className="grid grid-cols-1 md:grid-cols-[6fr_5fr] items-center justify-center gap-14">
-              <div><img src={nosotrosImg} alt="img1" /></div>
-
-
-              <div className="flex flex-col gap-4">
-               <div className="flex flex-col gap-6">
-                <div className="flex flex-col gap-3">
-                  <span className="text-sm font-bold uppercase tracking-widest text-gradient inline-flex items-center gap-2">
-                    <span className="w-8 h-0.5 bg-gradient-to-r from-[#53C1A9] to-[#4AB39A]"></span>
-                     {t("home.about.badge")}
-                  </span>
-                  <h2 className="text-3xl lg:text-4xl font-bold text-white uppercase leading-tight">
-                 {t("home.about.subtitle")} <br/>
-                    {/* <span className="text-gradient">el ecosistema minero</span> */}
-                  </h2>
-                </div>
-
-                <div className="h-1 w-20 bg-gradient-to-r from-[#53C1A9] to-[#4AB39A] rounded-full"></div>
-
-                <p className="text-white/90 text-base leading-relaxed">
-                {t("home.about.description")}
-                </p>
-                <div className="flex mt-4">
-                  <Button variant="gradient" className="uppercase group">
-                    <span>{t("home.about.button")}</span>
-                    <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </Button>
-                </div>
-              </div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
       </div>
 
+      
 
 
-
-<div className="bg-gradient-reverse2">
-<section className=" min-h-screen flex flex-col items-center justify-center">
+      <div className="bg-gradient-reverse2">
+      <section className="flex flex-col items-center justify-center py-20 md:py-40">
         <Container className="max-w-7xl">
-          <div className="flex flex-col items-center justify-center gap-16 px-8 md:px-16">
-            <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] items-center justify-center gap-14">
+          <div className="flex flex-col items-center justify-center gap-6 md:px-14 px-8 ">
+            <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] items-center justify-center gap-6 md:gap-14">
               <div>
-                <h1 className="text-3xl font-bold text-white text-center md:text-left">{t("home.team.title")}</h1>
+                <h1 className="text-2xl md:text-3xl font-bold text-white text-center md:text-left">{t("home.team.title")}</h1>
               </div>
               <div className="pr-0">
                 <p className="text-white pl-0 md:pl-20 text-center md:text-left">{t("home.team.description")}</p>
@@ -203,27 +195,17 @@ export const HomePage = () => {
         </Container>
       </section>
 
-      <section className=" min-h-screen flex flex-col items-center justify-center">
-        
-        <Container>
-          <div className="flex flex-col items-center justify-center gap-16 px-16"></div>
-      <TestimonialsSection />
-     
-     
-      <div className="flex flex-col gap-4 items-center justify-center pt-16">
-          <h1 className="text-3xl font-bold text-white text-center">{t("home.clients.title")}</h1>
-          <BrandsGrid />
-      </div>
-    </Container>
-      </section>
+
+    
+        <div className="">
+                <TestimonialsSection />
+            </div>
 
 
-      <section className=" min-h-screen flex flex-col items-center justify-center">
-
-
+      <section className="flex flex-col items-center justify-center py-20 md:py-40">
       <Container>
-          <div className="flex flex-col gap-16 px-0 md:px-8">
-          <h1 className="text-white text-center text-3xl font-bold uppercase">{t("home.chooseUs.title")}</h1>
+          <div className="flex flex-col gap-6 md:gap-14 px-0 md:px-8">
+          <h1 className="text-white text-center text-2xl md:text-3xl font-bold uppercase">{t("home.chooseUs.title")}</h1>
           <ChooseUsSection 
             data={chooseUsData}
              />
@@ -235,14 +217,13 @@ export const HomePage = () => {
 
 
 
-
-      <section className="min-h-screen flex flex-col items-center justify-center">
+      <section className="flex flex-col items-center justify-center">
         <Container className="w-full">
-          <div className="flex flex-col items-center justify-center gap-10 px-0 md:px-8">
-            <h1 className="text-3xl font-bold text-white text-center uppercase">{t("home.workflow.title")}</h1>
+          <div className="flex flex-col items-center justify-center gap-6 md:gap-10 px-0 md:px-8">
+            <h1 className="text-2xl md:text-3xl font-bold text-white text-center uppercase">{t("home.workflow.title")}</h1>
  
              <div className="mt-12 flex justify-center">
-               <div className="max-w-3xl">
+               <div className="max-w-2xl md:max-w-3xl">
                  <img 
                    src={flujoImg} 
                    alt="Flujo de trabajo de Meta Mining Media" 
@@ -257,18 +238,15 @@ export const HomePage = () => {
 
 
 
-<section className="  min-h-screen flex flex-col items-center justify-center py-24">
+<section className="flex flex-col items-center justify-center pt-20 md:pt-40 pb-20">
         <Container>
-          <div className="flex flex-col gap-16 px-0 md:px-8">
-          <h1 className="text-white text-center text-3xl font-bold uppercase">{t("home.contact.title")}</h1>
+          <div className="flex flex-col gap-6 md:gap-8 px-0 md:px-8">
+          <h1 className="text-white text-center text-2xl md:text-3xl font-bold uppercase">{t("home.contact.title")}</h1>
           <ContactSection />
           </div>
         </Container>
-    </section>
-
-</div>
-      
-</section>
+      </section>
+      </div>
 
     </div>
   );

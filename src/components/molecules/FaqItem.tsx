@@ -14,7 +14,7 @@ const FaqItem: React.FC<FaqItemProps> = ({ question, answer }) => {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex justify-between items-center text-left p-6"
       >
-        <span className="text-white text-sm md:text-lg font-medium">{question}</span>
+        <span className="text-white text-base md:text-lg font-medium">{question}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className={`w-5 h-5 text-white transition-transform duration-300 ${isOpen ? 'transform rotate-180' : ''}`}

@@ -32,7 +32,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
 
   if (isMobile) {
     return (
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-full justify-center items-center">
         <div
           className="flex items-center gap-2 cursor-pointer"
           onClick={handleToggle}
@@ -53,7 +53,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
         </div>
 
         {dropdownOpen && (
-          <div className="mt-2 space-y-2 pl-6">
+          <div className="mt-2 space-y-2 pl-0 md:pl-6">
             {languages
               .filter((lang) => lang.code !== selectedLang.code)
               .map((lang) => (

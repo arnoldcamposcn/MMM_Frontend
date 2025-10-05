@@ -16,8 +16,6 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [headerVisible, setHeaderVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
   const languages: Language[] = [
     { code: "ES", name: t("language.spanish") },
@@ -49,20 +47,12 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      setIsScrolled(currentScrollY > 0);
-
-      if (currentScrollY > lastScrollY && currentScrollY > 200) {
-        setHeaderVisible(false);
-      } else {
-        setHeaderVisible(true);
-      }
-
-      setLastScrollY(currentScrollY);
+      setIsScrolled(currentScrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   const navigationItems = [
     { label: t("navigation.home"), href: "/", isActive: location.pathname === "/" },
@@ -75,9 +65,9 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
 
   return (
     <header
-      className={`sticky top-0 z-50 py-6 transition-all duration-300 ${className} ${
-        headerVisible ? "translate-y-0" : "-translate-y-full"
-      } ${isScrolled ? "bg-grayCustom bg-opacity-80 backdrop-blur-lg shadow-custom" : ""}`}
+      className={`fixed top-0 left-0 right-0 z-50 py-6 transition-all duration-300 ${className} ${
+        isScrolled ? "bg-grayCustom bg-opacity-90 backdrop-blur-lg shadow-custom" : "bg-transparent"
+      }`}
     >
       <Container>
         <div className="flex items-center justify-between h-12">

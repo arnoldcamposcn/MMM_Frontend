@@ -117,7 +117,7 @@
       "description": "En Meta Mining Media estamos listos para acompañarte en la creación de soluciones audiovisuales, digitales y eventos que transformen la comunicación de tu empresa. Escríbenos y recibe una asesoría clara, rápida y sin compromiso.",
       "contactInfo": {
         "contactUs": "contactanos",
-        "phone": "+51 919-543-397",
+        "phone": "+51 919-543-393",
         "location": "ubicación",
         "address": "Av. Miraflores 123, Lima, Perú",
         "email": "email",
@@ -247,7 +247,7 @@
     },
     "about": {
       "title": "NOSOTROS",
-      "badge": "REVISTA META MINING",
+      "badge": "CONOCE META MINING MEDIA",
       "subtitle": "Descubre quiénes somos",
       "description": "Somos Meta Mining Media (MMM), una productora y agencia digital especializada en el sector minero. Nacimos para conectar, inspirar y fortalecer la industria mediante creatividad, innovación y contenidos de alto impacto",
       "button": "Conócenos"
@@ -299,7 +299,7 @@
     ]
   },
   "servicesSection": {
-    "title": "CONOCE NUESTROS SERVICIOS",
+    "title": "NUESTROS SERVICIOS",
     "loading": "Cargando categorías...",
     "error": "Error al cargar categorías.",
     "button": "conocer servicio"

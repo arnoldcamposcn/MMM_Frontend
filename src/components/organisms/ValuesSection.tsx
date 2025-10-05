@@ -13,9 +13,9 @@ const ValuesSection: React.FC<ValuesSectionProps> = ({ title }) => {
   const data = useValuesData();
   return (
     <Container>
-      <div className="flex flex-col items-center justify-center gap-14 px-8">
+      <div className="flex flex-col items-center justify-center gap-6 md:gap-14 px-2 md:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-semibold text-white uppercase">{title || t("about.values.title")}</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold text-white uppercase">{title || t("about.values.title")}</h2>
         </div>
         <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-4 items-stretch justify-center gap-6 px-0 max-w-7xl">
           {data.map((item, index) => (

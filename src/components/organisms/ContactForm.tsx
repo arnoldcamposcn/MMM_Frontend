@@ -30,7 +30,7 @@ export const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className="bg-white p-8 md:p-12 rounded-3xl">
+    <div className="bg-white px-4 md:px-12 py-8 md:py-12 rounded-3xl">
       <h2 className="text-2xl lg:text-3xl font-bold text-grayCustom uppercase">
         {t("contact.form.title")}
       </h2>
@@ -38,7 +38,7 @@ export const ContactForm: React.FC = () => {
         {t("contact.form.description")}
       </p>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="mt-6 md:mt-8 space-y-4">
         <FormInput<formContact>
           name="name"
           placeholder={t("contact.form.fields.name")}

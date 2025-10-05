@@ -3,6 +3,8 @@ import React from "react";
 import backgroundCTA from "@/assets/cover/background-cta.png";
 import { Button } from "../atoms/Button";
 import SendIcon from "@/assets/icons/arrow.svg";
+import { useNavigate } from "react-router-dom";
+
 
 interface InformativeBoxProps {
   title: React.ReactNode;
@@ -13,20 +15,22 @@ interface InformativeBoxProps {
 }
 
 export const InformativeBox: React.FC<InformativeBoxProps> = ({
+  
   title,
   additionalInfo,
   description,
   primaryButton,
   secondaryButton,
 }) => {
+  const navigate = useNavigate();
   return (
     <div className="relative w-full">
       {/* Imagen de fondo */}
-      <img src={backgroundCTA} alt="background" className="w-full object-cover" />
+      <img src={backgroundCTA} alt="background" className="w-full object-cover hidden md:block" />
 
       {/* Contenido centrado en la imagen */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
-        <div className="flex flex-col justify-center items-center gap-6 px-40">
+      <div className="relative md:absolute inset-0 flex flex-col items-center justify-center text-white text-center px-2 md:px-4">
+        <div className="flex flex-col justify-center items-center gap-6 px-0 md:px-4 lg:px-40">
 
           <div className="flex flex-col gap-6">
           <h1 className="text-3xl md:text-3xl font-bold ">{title}</h1>
@@ -37,9 +41,9 @@ export const InformativeBox: React.FC<InformativeBoxProps> = ({
           </div>
         
 
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-col md:flex-row gap-4">
           {/* Botón principal SIEMPRE con icono */}
-          <Button variant="gradient">
+          <Button variant="gradient" onClick={() => navigate("/contacto")}>
             <span className="flex items-center gap-2">
               {primaryButton.label}
               <img src={SendIcon} alt="icono enviar" className="w-3 h-3" />
@@ -48,7 +52,7 @@ export const InformativeBox: React.FC<InformativeBoxProps> = ({
 
           {/* Botón secundario opcional */}
           {secondaryButton && (
-            <Button variant="outline">{secondaryButton.label}</Button>
+            <Button variant="outline" onClick={() => navigate("/servicios")}>{secondaryButton.label}</Button>
           )}
 
         </div>
