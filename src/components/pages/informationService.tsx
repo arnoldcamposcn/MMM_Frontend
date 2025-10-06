@@ -34,7 +34,7 @@ export const InformationServicePage = () => {
             <Header />
             <main>
                 <Container>
-                <div className="py-8 md:py-12 lg:py-12">
+                <div className=" pt-24 md:pt-24 pb-8 md:pb-12">
                 <Breadcrumb
                             title={<>{data.title.toUpperCase()}</>}
                             path={`${t("informationService.breadcrumb")} / ${data.title.toUpperCase()}`}
