@@ -12,7 +12,8 @@ dist
 dist-ssr
 *.local
 
-nginx.conf
+nginx.conf   ✅ ← Muy importante, evita que tu config de Nginx se suba o se sobreescriba
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -24,4 +25,4 @@ nginx.conf
 *.sln
 *.sw?
 
-Instance.ts
+Instance.ts  ✅ ← Si este archivo también es distinto por entorno, está bien ignorarlo
