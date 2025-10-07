@@ -281,7 +281,18 @@
       ]
     },
     "workflow": {
-      "title": "Our Workflow"
+      "title": "Our Workflow",
+      "description": "A strategic and creative journey - where each stage drives your growth. We can integrate at any point in the process.",
+      "steps": {
+        "brief": "We analyze your brand and objectives to build the base strategy.",
+        "diagnosis": "We review your digital ecosystem and detect real improvement opportunities.",
+        "proposal": "We define the action plan, resources and expected impact.",
+        "execution": "We establish times, tools and responsible parties for precise execution.",
+        "implementation": "We execute campaigns, audiovisual productions, content and digital media.",
+        "validation": "We measure results, optimize strategies and reinforce what generates value.",
+        "delivery": "We present the results and propose new growth opportunities.",
+        "evolution": "We integrate AI, automation and emerging trends for your constant growth."
+      }
     },
     "contact": {
       "title": "Contact Us"

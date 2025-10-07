@@ -281,7 +281,18 @@
       ]
     },
     "workflow": {
-      "title": "Nuestro Flujo de Trabajo"
+      "title": "Nuestro Flujo de Trabajo",
+      "description": "Un recorrido estratégico y creativo - donde cada etapa impulsa tu crecimiento. Podemos integrarnos en cualquier punto del proceso.",
+      "steps": {
+        "brief": "Analizamos tu marca y objetivos para construir la estrategia base.",
+        "diagnosis": "Revisamos tu ecosistema digital y detectamos oportunidades reales de mejora.",
+        "proposal": "Definimos el plan de acción, los recursos y el impacto esperado.",
+        "execution": "Establecemos tiempos, herramientas y responsables para una ejecución precisa.",
+        "implementation": "Ejecutamos campañas, producciones audiovisuales, contenido y medios digitales.",
+        "validation": "Medimos resultados, optimizamos estrategias y reforzamos lo que genera valor.",
+        "delivery": "Presentamos los resultados y planteamos nuevas oportunidades de crecimiento.",
+        "evolution": "Integramos IA, automatización y tenedencias emergentes para tu crecimiento constante."
+      }
     },
     "contact": {
       "title": "Contáctanos"

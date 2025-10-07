@@ -14,6 +14,7 @@ import { useFetch } from "../../hooks/useFetch";
 import { getInformationService } from "../../services/articles/article.service";
 import type { informationService } from "../../schema/mmm/types";
 import flujoImg from "@/assets/all/fluijo.png";
+import { WorkflowSection } from '../organisms/WorkflowSection';
 
 export const InformationServicePage = () => {
     const { t } = useTranslation();
@@ -58,8 +59,7 @@ export const InformationServicePage = () => {
 
 
                 <Container>
-
-                    <div className="flex flex-col gap-14 px-0 md:px-8 pt-24 pb-32">
+                    <div className="flex flex-col gap-14 px-0 md:px-8 pt-24 pb-24 md:pb-32">
                         <h1 className="text-white text-center text-2xl md:text-3xl font-bold uppercase">{t("informationService.sections.whatIncludes")}</h1>
                         <ChooseUsSection
                             data={data.features.map((feature, index) => ({
@@ -77,19 +77,7 @@ export const InformationServicePage = () => {
 
 
                 <Container className="pb-20 md:pb-40">
-                    <div className="flex flex-col items-center justify-center gap-10 px-0 md:px-8">
-                        <h1 className="text-2xl md:text-3xl font-bold text-white text-center uppercase">{t("informationService.sections.workflow")}</h1>
-
-                        <div className="mt-12 flex justify-center">
-                            <div className="max-w-4xl">
-                                <img
-                                    src={flujoImg}
-                                    alt="Flujo de trabajo de Meta Mining Media"
-                                    className="w-full h-auto object-contain"
-                                />
-                            </div>
-                        </div>
-                    </div>
+                <WorkflowSection/>
                 </Container>
 
                 <div className="pb-20 md:pb-40">

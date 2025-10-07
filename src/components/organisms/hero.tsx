@@ -19,9 +19,9 @@ interface HeroSlide {
 // Componente para el loop de imágenes
 const ImageLoop = () => {
   const images = [
-    "/slider/merchandising.png", 
-    "/slider/servicio3d.png",
-    "/slider/produccion.png",
+    "/slider/merchandising.webp", 
+    "/slider/servicio3d.webp",
+    "/slider/produccion.webp",
   ];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -34,13 +34,13 @@ const ImageLoop = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-full min-h-[380px] md:min-h-[500px] flex items-center justify-center">
       <AnimatePresence mode="wait">
         <motion.img
           key={currentImageIndex}
           src={images[currentImageIndex]}
           alt={`Hero image ${currentImageIndex + 1}`}
-          className="w-auto h-auto"
+          className="max-w-full max-h-full object-contain"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 1.1 }}
@@ -69,9 +69,9 @@ export const HeroSection = () => {
       key={index}
       className="flex items-center justify-center h-full"
     >
-      <div className="grid grid-cols-1 md:grid-cols-[5.4fr_5fr] gap-4 md:gap-8 items-center w-full max-w-7xl px-0 md:px-0">
+      <div className="grid grid-cols-1 md:grid-cols-[5.4fr_5fr] gap-4 md:gap-8 items-center w-full max-w-7xl px-0 md:px-0 min-h-[500px] md:min-h-[600px]">
         {/* Imagen - Primera en móvil */}
-        <div className="flex justify-center order-first md:order-last px-4 md:px-0">
+        <div className="flex justify-center order-first md:order-last px-4 md:px-0 h-full">
           <ImageLoop />
         </div>
 

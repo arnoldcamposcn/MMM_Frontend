@@ -13,10 +13,10 @@ import { ContactSection } from "../organisms/ContactSection";
 import ChooseUsSection from '../organisms/ChooseUsSection';
 import { useChooseUsData } from '../../data/chooseUs.data';
 import TestimonialsSection from '../organisms/TestimonialsSection';
-import flujoImg from "@/assets/all/fluijo.png";
 import { PortfolioSection } from "../organisms/PortfolioSection";
 import { useTeamMembers } from "../../data/team.data";
 import { useNavigate } from 'react-router-dom';
+import { WorkflowSection } from "../organisms/WorkflowSection";
 
 
 export const HomePage = () => {
@@ -39,7 +39,7 @@ export const HomePage = () => {
       </section>
 
       <div className="bg-gradient-inverted">
-        <section className="flex flex-col items-center justify-center py-20 md:py-40">
+        <section className="flex flex-col items-center justify-center py-20 md:py-32 lg:py-40">
           <Container>
             <ServicesSection />
           </Container>
@@ -62,10 +62,10 @@ export const HomePage = () => {
       <div>
         <section className="flex flex-col items-center justify-center py-20 md:py-40">
           <Container className="w-full">
-            <div className="flex flex-col items-center justify-center gap-6 md:gap-10 px-0 md:px-8">
+            <div className="flex flex-col items-center justify-center gap-6 md:gap-14 px-0 md:px-8">
               <h1 className="text-2xl md:text-3xl font-bold text-white text-center">{t("home.about.title")}</h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-[6fr_5fr] items-center justify-center gap-14">
+            <div className="grid grid-cols-1 md:flex-col lg:grid-cols-[6fr_5fr] items-center justify-center gap-14">
               <div><img src={nosotrosImg} alt="img1" /></div>
 
 
@@ -113,7 +113,7 @@ export const HomePage = () => {
             
             {/* Objetos decorativos de fondo */}
 
-            <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] items-center justify-center gap-6 md:gap-16 relative z-10">
+            <div className="grid grid-cols-1 md:flex-col  lg:grid-cols-[1.2fr_1fr] items-center justify-center gap-6 md:gap-16 relative z-10">
               {/* Imagen con objetos decorativos */}
               <div className="relative">
                 {/* Círculo decorativo detrás */}
@@ -176,17 +176,17 @@ export const HomePage = () => {
       <div className="bg-gradient-reverse2">
       <section className="flex flex-col items-center justify-center py-20 md:py-40">
         <Container className="max-w-7xl">
-          <div className="flex flex-col items-center justify-center gap-6 md:px-14 px-8 ">
-            <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] items-center justify-center gap-6 md:gap-14">
+          <div className="flex flex-col items-center justify-center gap-6 md:gap-12 lg:gap-14 md:px-14 px-8 ">
+            <div className="grid grid-cols-1 md:flex-col lg:grid-cols-[1.5fr_1fr] items-center justify-center gap-6 md:gap-6 lg:gap-14">
               <div>
                 <h1 className="text-2xl md:text-3xl font-bold text-white text-center md:text-left">{t("home.team.title")}</h1>
               </div>
               <div className="pr-0">
-                <p className="text-white pl-0 md:pl-20 text-center md:text-left">{t("home.team.description")}</p>
+                <p className="text-white pl-0 md:pl-0 lg:pl-20 text-center md:text-left">{t("home.team.description")}</p>
         </div>
       </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 items-center justify-center gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-6">
               {useTeamMembers().map((item, index) => (
                 <TeamCard key={index} member={item.member} image={item.image} />
               ))} 
@@ -216,29 +216,15 @@ export const HomePage = () => {
 
 
 
-
-      <section className="flex flex-col items-center justify-center">
-        <Container className="w-full">
-          <div className="flex flex-col items-center justify-center gap-6 md:gap-10 px-0 md:px-8">
-            <h1 className="text-2xl md:text-3xl font-bold text-white text-center uppercase">{t("home.workflow.title")}</h1>
- 
-             <div className="mt-12 flex justify-center">
-               <div className="max-w-2xl md:max-w-3xl">
-                 <img 
-                   src={flujoImg} 
-                   alt="Flujo de trabajo de Meta Mining Media" 
-                   className="w-full h-auto object-contain"
-                 />
-               </div>
-             </div>
-           </div>
-          </Container>
+      <section className="flex flex-col items-center justify-center">  
+        <Container>
+        <WorkflowSection/>
+        </Container>
         </section>
 
 
 
-
-<section className="flex flex-col items-center justify-center pt-20 md:pt-40 pb-20">
+      <section className="flex flex-col items-center justify-center pt-20 md:pt-40 pb-20">
         <Container>
           <div className="flex flex-col gap-6 md:gap-8 px-0 md:px-8">
           <h1 className="text-white text-center text-2xl md:text-3xl font-bold uppercase">{t("home.contact.title")}</h1>
