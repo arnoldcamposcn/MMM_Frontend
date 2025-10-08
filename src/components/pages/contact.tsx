@@ -25,7 +25,7 @@ export const ContactPage = () => {
         </Container>
 
         <Container>
-          <div className="pb-0 md:pb-4 lg:pb-24">
+          <div className="pb-20 md:pb-16 lg:pb-24">
             <div className="flex flex-col items-center justify-center gap-16 px-0 md:px-4 lg:px-8">
               <ContactSection />
             </div>

@@ -26,7 +26,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({ member, image }) => {
         return (
             <div className="flex flex-col justify-between bg-white rounded-3xl p-8 h-[345px]">
                 <div>
-                    <h2 className="text-2xl font-semibold uppercase">{member.name}</h2>
+                    <h2 className="text-lg md:text-2xl font-semibold uppercase">{member.name}</h2>
                 </div>
                 <div className="flex mt-2">
                     <span className="text-[15px]">{member.title}</span>

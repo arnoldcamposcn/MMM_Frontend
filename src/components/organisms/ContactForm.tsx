@@ -31,7 +31,7 @@ export const ContactForm: React.FC = () => {
 
   return (
     <div className="bg-white px-4 md:px-12 py-8 md:py-12 rounded-3xl">
-      <h2 className="text-2xl lg:text-[26px] font-bold text-grayCustom uppercase">
+      <h2 className="text-xl lg:text-[26px] font-bold text-grayCustom uppercase">
         {t("contact.form.title")}
       </h2>
       <p className="mt-4 text-[15px] text-gray-600">

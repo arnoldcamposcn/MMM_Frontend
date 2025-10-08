@@ -57,10 +57,10 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
   const navigationItems = [
     { label: t("navigation.home"), href: "/", isActive: location.pathname === "/" },
     { label: t("navigation.about"), href: "/nosotros", isActive: location.pathname === "/nosotros" },
-    { label: t("navigation.service"), href: "/servicios", isActive: location.pathname === "/servicio" },
+    { label: t("navigation.services"), href: "/servicios", isActive: location.pathname === "/servicios" },
     { label: t("navigation.portfolio"), href: "/portafolio", isActive: location.pathname === "/portafolio" },
     { label: t("navigation.contact"), href: "/contacto", isActive: location.pathname === "/contacto" },
-    { label: t("navigation.magazine"), href: "/meta-mining-revista", isActive: location.pathname === "/meta-mining-revista" },
+    { label: t("navigation.magazine"), href: "https://revista.metaminingmedia.com/", isActive: false, isExternal: true },
   ];
 
   return (
@@ -79,6 +79,7 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
               <a
                 key={index}
                 href={item.href}
+                {...(item.isExternal && { target: "_blank", rel: "noopener noreferrer" })}
                 className={`magazine-link relative text-[15px] uppercase text-white font-medium transition-all duration-300 hover:text-[#53C1A9] py-2 px-0 ${
                   item.isActive ? "text-white font-bold" : "hover:scale-105"
                 }`}
@@ -86,8 +87,7 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
                 {item.label}
                 {item.isActive && (
                   <>
-                    <div className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-[#53C1A9] to-[#4AB39A] rounded-full"></div>
-                    <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-[#53C1A9] rounded-full"></div>
+                    <div className="absolute -bottom-1 left-0 right-0 h-[3px] bg-gradient-to-r from-[#53C1A9] to-[#4AB39A] rounded-full"></div>
                   </>
                 )}
               </a>
@@ -141,6 +141,7 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
               <a
                 key={index}
                 href={item.href}
+                {...(item.isExternal && { target: "_blank", rel: "noopener noreferrer" })}
                 className={`text-base uppercase ${
                   item.isActive ? "text-[#53C1A9]" : "text-white"
                 } hover:text-[#53C1A9] transition-colors`}

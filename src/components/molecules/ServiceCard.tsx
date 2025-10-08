@@ -23,11 +23,11 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ title, subServices }) 
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="service-title-wrapper">
-          <h1 className="text-black text-2xl font-semibold uppercase">
+          <h1 className="text-black text-xl md:text-xl lg:text-2xl font-semibold uppercase">
             {title}
           </h1>
         </div>
-        <span className="text-black font-regular text-xl flex items-center gap-2 mt-auto pt-4">
+        <span className="text-black font-regular text-lg md:text-xl lg:text-xl flex items-center gap-2 mt-auto pt-4">
           <img
             src={iconService}
             alt={isOpen ? "Ver menos" : "Ver más"}

@@ -6,7 +6,7 @@
   "navigation": {
     "home": "Home",
     "about": "About",
-    "service": "Service",
+    "services": "Services",
     "portfolio": "Portfolio",
     "contact": "Contact",
     "magazine": "Meta Mining Magazine"
@@ -240,14 +240,14 @@
   },
   "home": {
     "magazine": {
-      "badge": "META MINING MAGAZINE",
+      "badge": "Meta Mining Magazine",
       "title": "Creativity that moves the mining industry",
       "description": "Discover a space where creativity, technical analysis and sector trends combine to deliver precise, updated and useful information. An indispensable source to always stay up to date with what moves mining.",
       "button": "know magazine"
     },
     "about": {
       "title": "ABOUT US",
-      "badge": "MINING MEDIA KNOW META",
+      "badge": "Mining Media Know Meta",
       "subtitle": "Discover who we are",
       "description": "We are Meta Mining Media (MMM), a digital producer and agency specialized in the mining sector. We were born to connect, inspire and strengthen the industry through creativity, innovation and high-impact content",
       "button": "Know us"

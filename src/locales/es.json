@@ -6,7 +6,7 @@
   "navigation": {
     "home": "Inicio",
     "about": "Nosotros",
-    "service": "Servicio",
+    "services": "Servicios",
     "portfolio": "Portafolio",
     "contact": "Contacto",
     "magazine": "Meta Mining Revista"
@@ -240,14 +240,14 @@
   },
   "home": {
     "magazine": {
-      "badge": "REVISTA META MINING",
+      "badge": "Revista Meta Mining",
       "title": "Creatividad que mueve la industria minera",
       "description": "Descubre un espacio donde creatividad, análisis técnico y tendencias del sector se combinan para entregar información precisa, actualizada y útil. Una fuente indispensable para estar siempre al día con lo que mueve la minería.",
       "button": "conocer revista"
     },
     "about": {
       "title": "NOSOTROS",
-      "badge": "CONOCE META MINING MEDIA",
+      "badge": "Conoce Meta Mining Media",
       "subtitle": "Descubre quiénes somos",
       "description": "Somos Meta Mining Media (MMM), una productora y agencia digital especializada en el sector minero. Nacimos para conectar, inspirar y fortalecer la industria mediante creatividad, innovación y contenidos de alto impacto",
       "button": "Conócenos"
@@ -264,19 +264,19 @@
       "items": [
         {
           "title": "Dominio técnico minero",
-          "description": "Equipos de cine, cámaras 360°, drones y personal con experiencia en faenas mineras para producciones seguras y de impacto."
+          "description": "Entendemos los procesos de la industria con rigor y precisión. Traducimos la complejidad técnica en contenidos claros y atractivos."
         },
         {
-          "title": "Producción audiovisual de alto nivel",
-          "description": "Equipos de cine, cámaras 360°, drones y personal con experiencia en faenas mineras para producciones seguras y de impacto."
+          "title": "Innovación en cada proyecto",
+          "description": "Aplicamos 3D, VR/360°, drones y data storytelling para crear experiencias únicas que potencian la comunicación en minería."
         },
         {
-          "title": "Marketing digital B2B con resultados",
-          "description": "Equipos de cine, cámaras 360°, drones y personal con experiencia en faenas mineras para producciones seguras y de impacto."
+          "title": "Producción integral",
+          "description": "Nos encargamos de todo el ciclo: planificación, producción, distribución y medición de impacto, asegurando calidad en cada etapa."
         },
         {
-          "title": "Visión integral de la comunicación",
-          "description": "Equipos de cine, cámaras 360°, drones y personal con experiencia en faenas mineras para producciones seguras y de impacto."
+          "title": "Comunidad y alcance",
+          "description": "No solo producimos, también conectamos: revista Meta Mining, CODEA Mining Fest y canal de YouTube con proyección en LATAM."
         }
       ]
     },

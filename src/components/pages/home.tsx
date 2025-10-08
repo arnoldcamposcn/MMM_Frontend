@@ -55,7 +55,7 @@ export const HomePage = () => {
 
         <section className="flex flex-col items-center justify-center">
           <Container>
-            <div className="px-0 md:px-12">
+            <div className="px-0 md:px-12 lg:px-12">
               <PortfolioSection showTitle={true} />
             </div>
           </Container>
@@ -68,8 +68,8 @@ export const HomePage = () => {
       <div>
         <section className="flex flex-col items-center justify-center py-20 md:py-40">
           <Container className="w-full">
-            <div className="flex flex-col items-center justify-center gap-6 md:gap-14 px-0 md:px-12">
-              <h1 className="text-2xl md:text-3xl font-bold text-white text-center">{t("home.about.title")}</h1>
+            <div className="flex flex-col items-center justify-center gap-6 md:gap-14 px-0 md:px-10 lg:px-12">
+              <h1 className="text-2xl md:text-[28px] font-bold text-white text-center">{t("home.about.title")}</h1>
 
             <div className="grid grid-cols-1 md:flex-col lg:grid-cols-[6fr_5fr] items-center justify-center gap-16">
               <div><img src={nosotrosImg} alt="img1" className="rounded-lg" /></div>
@@ -82,7 +82,7 @@ export const HomePage = () => {
                     <span className="w-8 h-0.5 bg-gradient-to-r from-[#53C1A9] to-[#4AB39A] capitalize"></span>
                      {t("home.about.badge")}
                   </span>
-                  <h2 className="text-2xl md:text-3xl font-bold text-white uppercase leading-tight">
+                  <h2 className="text-2xl md:text-[28px] font-bold text-white uppercase leading-tight">
                  {t("home.about.subtitle")} <br/>
                     {/* <span className="text-gradient">el ecosistema minero</span> */}
                   </h2>
@@ -149,7 +149,7 @@ export const HomePage = () => {
                     <span className="w-8 h-0.5 bg-gradient-to-r from-[#53C1A9] to-[#4AB39A]"></span>
                      {t("home.magazine.badge")}
                   </span>
-                  <h2 className="text-2xl md:text-3xl font-bold text-white uppercase leading-tight">
+                  <h2 className="text-2xl md:text-[28px] font-bold text-white uppercase leading-tight">
                     {t("home.magazine.title")}
                   </h2>
                 </div>
@@ -159,7 +159,8 @@ export const HomePage = () => {
                 {t("home.magazine.description")}
                 </p>
                 <div className="flex">
-                  <Button variant="gradient" className="uppercase group">
+                  <Button variant="gradient" className="uppercase group" 
+                  onClick={() => window.open("https://revista.metaminingmedia.com", "_blank")}>
                     <span>{t("home.magazine.button")}</span>
                     <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -178,16 +179,16 @@ export const HomePage = () => {
 
       <div className="bg-gradient-reverse2">
       <section className="flex flex-col items-center justify-center py-20 md:py-40">
-        <Container className="max-w-7xl">
-          <div className="flex flex-col items-center justify-center gap-6 md:gap-12 lg:gap-14 md:px-12 px-8 ">
+        <Container>
+          <div className="flex flex-col items-center justify-center gap-6 md:gap-12 lg:gap-14 md:px-10 lg:px-12 px-8 ">
             <div className="grid grid-cols-1 md:flex-col lg:grid-cols-[1.5fr_1fr] items-center justify-center gap-6 md:gap-6 lg:gap-14">
               <div>
-                <h1 className="text-2xl md:text-3xl font-bold text-white text-center md:text-left">{t("home.team.title")}</h1>
+                <h1 className="text-2xl md:text-[28px] font-bold text-white text-center md:text-left">{t("home.team.title")}</h1>
               </div>
               <div className="pr-0">
                 <p className="text-white pl-0 md:pl-0 lg:pl-20 text-center md:text-left text-[15px]">{t("home.team.description")}</p>
-        </div>
-      </div>
+              </div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-6">
               {useTeamMembers().map((item, index) => (
@@ -208,7 +209,7 @@ export const HomePage = () => {
       <section className="flex flex-col items-center justify-center py-20 md:py-40">
       <Container>
           <div className="flex flex-col gap-6 md:gap-12 px-0 md:px-12">
-          <h1 className="text-white text-center text-2xl md:text-3xl font-bold uppercase">{t("home.chooseUs.title")}</h1>
+          <h1 className="text-white text-center text-2xl md:text-[28px] font-bold uppercase">{t("home.chooseUs.title")}</h1>
           <ChooseUsSection 
             data={chooseUsData}
              />
@@ -230,7 +231,7 @@ export const HomePage = () => {
       <section className="flex flex-col items-center justify-center pt-20 md:pt-40 pb-20">
         <Container>
           <div className="flex flex-col gap-6 md:gap-12 px-0 md:px-12">
-          <h1 className="text-white text-center text-2xl md:text-3xl font-bold uppercase">{t("home.contact.title")}</h1>
+          <h1 className="text-white text-center text-2xl md:text-[28px] font-bold uppercase">{t("home.contact.title")}</h1>
           <ContactSection />
           </div>
         </Container>

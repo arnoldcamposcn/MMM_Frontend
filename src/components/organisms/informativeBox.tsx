@@ -33,9 +33,9 @@ export const InformativeBox: React.FC<InformativeBoxProps> = ({
         <div className="flex flex-col justify-center items-center gap-6 px-0 md:px-4 lg:px-40">
 
           <div className="flex flex-col gap-6">
-          <h1 className="text-3xl md:text-[28px] font-bold ">{title}</h1>
+          <h1 className="text-xl md:text-2xl lg:text-[28px] font-bold ">{title}</h1>
         <p className="text-paragraph">{description}</p>
-        <span className="text-base uppercase font-bold tracking-wider text-gradient">
+        <span className="text-[15px] md:text-base uppercase font-bold tracking-wider text-gradient">
           {additionalInfo}
         </span>
           </div>

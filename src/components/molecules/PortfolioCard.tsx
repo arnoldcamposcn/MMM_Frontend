@@ -16,7 +16,7 @@ export const PortfolioCard: React.FC<PortfolioCardProps> = ({ image, title, desc
       <div className="flex flex-col h-full">
         {/* Contenedor de imagen con altura fija y overlay hover */}
         <div 
-            className="w-full max-w-[280px] md:max-w-[280px] mx-auto aspect-square overflow-hidden cursor-pointer flex-shrink-0 relative group"
+            className="w-full max-w-[280px] md:max-w-[290px] mx-auto aspect-square overflow-hidden cursor-pointer flex-shrink-0 relative group"
             onClick={() => setIsModalOpen(true)}
         >
           <img

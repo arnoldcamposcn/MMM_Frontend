@@ -59,8 +59,8 @@ export const InformationServicePage = () => {
 
 
                 <Container>
-                    <div className="flex flex-col gap-14 px-0 md:px-8 pt-24 pb-24 md:pb-32">
-                        <h1 className="text-white text-center text-2xl md:text-3xl font-bold uppercase">{t("informationService.sections.whatIncludes")}</h1>
+                    <div className="flex flex-col gap-14 px-0 md:px-8 pt-12 pb-12 md:pb-32">
+                        <h1 className="text-white text-center text-2xl md:text-[28px] font-bold uppercase">{t("informationService.sections.whatIncludes")}</h1>
                         <ChooseUsSection
                             data={data.features.map((feature, index) => ({
                                 title: feature.title,
@@ -86,7 +86,7 @@ export const InformationServicePage = () => {
 
 
                 <Container>
-                    <div className="text-center flex flex-col items-center justify-center gap-6 md:gap-14 px-0 md:px-8 pb-0 md:pb-24">
+                    <div className="text-center flex flex-col items-center justify-center gap-6 md:gap-14 px-0 md:px-12 pb-0 md:pb-24">
                         <h1 className="text-white text-2xl md:text-3xl font-bold uppercase">{t("informationService.sections.faq")}</h1>
 
                         <div>
@@ -98,8 +98,8 @@ export const InformationServicePage = () => {
                 </Container>
 
                 <Container className="py-20 md:py-24">
-                    <div className="flex flex-col gap-6 md:gap-14 px-0 md:px-8">
-                        <h1 className="text-white text-center text-2xl md:text-3xl font-bold uppercase">{t("informationService.sections.contact")}</h1>
+                    <div className="flex flex-col gap-6 md:gap-14 px-0 md:px-12">
+                        <h1 className="text-white text-center text-2xl md:text-[28px] font-bold uppercase">{t("informationService.sections.contact")}</h1>
                         <ContactSection />
                     </div>
                 </Container>

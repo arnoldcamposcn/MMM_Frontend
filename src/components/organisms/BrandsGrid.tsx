@@ -27,7 +27,7 @@ export const BrandsGrid = () => {
           </div>
           <div className="relative flex justify-between items-center">
             <div className="w-12 h-1 bg-white" />
-            <span className="bg-gray-900 px-4 text-base font-regular leading-6 text-white flex items-center gap-2 font-abeezee">
+            <span className="bg-black px-4 text-base font-regular leading-6 text-white flex items-center gap-2 font-abeezee rounded-2xl">
               5.0
               <span className="flex items-center">
                 {[...Array(5)].map((_, i) => (

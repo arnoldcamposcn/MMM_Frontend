@@ -9,30 +9,30 @@ export const ContactSection = () => {
     { platform: 'facebook', href: '#' },
     { platform: 'linkedin', href: '#' },
     { platform: 'instagram', href: '#' },
-    { platform: 'youtube', href: '#' }
+    { platform: 'twitter', href: '#' }
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center gap-6 md:gap-6 lg:gap-12 px-0 md:px-14 bg-transparent md:bg-grayCustom rounded-3xl py-0 md:py-14 lg:py-20">
+    <div className="flex flex-col items-center justify-center gap-6 md:gap-6 lg:gap-12 px-0 md:px-16 bg-transparent md:bg-grayCustom rounded-3xl py-0 md:py-14 lg:py-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-6 md:gap-14 text-white w-full">
         <div className="flex flex-col gap-6 md:gap-8 lg:gap-8">
-          <h1 className="text-xl lg:text-2xl font-bold uppercase">{t("contact.section.title")}</h1>
+          <h1 className="text-xl lg:text-2xl text-center md:text-left font-bold uppercase">{t("contact.section.title")}</h1>
           <p className="text-paragraph text-center md:text-left">{t("contact.section.description")}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 items-center justify-center gap-6 md:gap-8 text-white">
             <div className="flex flex-col justify-center items-center md:items-start">
-              <h2 className="text-xl md:text-xl font-bold uppercase pb-2 text-center md:text-left">{t("contact.section.contactInfo.contactUs")}</h2>
+              <h2 className="text-xl md:text-xl font-bold uppercase pb-3 text-center md:text-left">{t("contact.section.contactInfo.contactUs")}</h2>
               <span className="text-[15px]">{t("contact.section.contactInfo.phone")}</span>
             </div>
             <div className="flex flex-col justify-center items-center md:items-start">
-              <h2 className="text-xl md:text-xl font-bold uppercase pb-2 text-center md:text-left">{t("contact.section.contactInfo.location")}</h2>
+              <h2 className="text-xl md:text-xl font-bold uppercase pb-3 text-center md:text-left">{t("contact.section.contactInfo.location")}</h2>
               <span className="text-[15px]">{t("contact.section.contactInfo.address")}</span>
             </div>
             <div className="flex flex-col justify-center items-center md:items-start">
-              <h2 className="text-xl md:text-xl font-bold uppercase pb-2 text-center md:text-left">{t("contact.section.contactInfo.email")}</h2>
+              <h2 className="text-xl md:text-xl font-bold uppercase pb-3 text-center md:text-left">{t("contact.section.contactInfo.email")}</h2>
               <span className="text-[15px]">{t("contact.section.contactInfo.emailAddress")}</span>
             </div>
             <div className="flex flex-col justify-center items-center md:items-start">
-              <h2 className="text-xl md:text-xl font-bold uppercase pb-2 text-center md:text-left">{t("contact.section.contactInfo.followUs")}</h2>
+              <h2 className="text-xl md:text-xl font-bold uppercase pb-3 text-center md:text-left">{t("contact.section.contactInfo.followUs")}</h2>
               <SocialLinks links={socialLinks} />
             </div>
           </div>

@@ -18,10 +18,10 @@ const TestimonialsSection = () => {
   return (
     <section>
       <Container>
-        <div className="flex flex-col gap-6 md:gap-12 px-6 md:px-12">
+        <div className="flex flex-col gap-6 md:gap-12 px-4 md:px-10 lg:px-12">
           <div className="flex flex-col md:flex-col lg:flex-row items-center justify-between gap-6 md:gap-14">
             <div>
-              <h1 className="text-2xl md:text-3xl font-bold text-white text-center md:text-left">TESTIMONIOS DE <br />
+              <h1 className="text-xl md:text-2xl lg:text-[28px] font-bold text-white text-center md:text-left">TESTIMONIOS DE <br />
                 NUESTROS CLIENTES</h1>
             </div>
             <div className="flex flex-row items-center justify-end gap-4">

@@ -77,8 +77,8 @@ export const ServicesSection = () => {
   if (error) return <p className="text-white text-center">{t("servicesSection.error")}</p>;
 
   return (
-    <div className="flex flex-col items-center justify-center px-0 md:px-12 w-full">
-      <h1 className="text-2xl md:text-3xl lg:text-3xl font-bold text-white text-center pb-8 md:pb-10">
+    <div className="flex flex-col items-center justify-center px-0 md:px-10 lg:px-12 w-full">
+      <h1 className="text-2xl md:text-3xl lg:text-[28px] font-bold text-white text-center pb-6 md:pb-10">
         {t("servicesSection.title")}
       </h1>
       
@@ -149,7 +149,7 @@ export const ServicesSection = () => {
               {activeService.category.name}
             </span>
             
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white uppercase leading-tight">
+            <h2 className="text-xl md:text-2xl lg:text-[28px] font-semibold text-white uppercase leading-tight">
               {activeService.title}
             </h2>
             

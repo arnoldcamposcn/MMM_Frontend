@@ -153,7 +153,7 @@
     @apply bg-gradient-to-r from-emerald-400/80 to-cyan-400/40 text-black;
   }
   .text-paragraph {
-    @apply text-white text-[15px] font-normal text-justify;
+    @apply text-white text-[15px] font-normal ;
   }
   .title-text{
     @apply text-white text-2xl lg:text-[28px] font-semibold uppercase;

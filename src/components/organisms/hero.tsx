@@ -69,20 +69,20 @@ export const HeroSection = () => {
       key={index}
       className="flex items-center justify-center h-full"
     >
-      <div className="grid grid-cols-1 md:grid-cols-[5.4fr_5fr] gap-4 md:gap-8 items-center w-full max-w-7xl px-0 md:px-0 min-h-[500px] md:min-h-[600px]">
+      <div className="grid grid-cols-1 md:flex-col lg:grid-cols-[5.4fr_5fr] gap-4 md:gap-8 items-center w-full max-w-7xl px-0 md:px-0 min-h-[500px] md:min-h-[600px]">
         {/* Imagen - Primera en móvil */}
-        <div className="flex justify-center order-first md:order-last px-4 md:px-0 h-full">
+        <div className="flex justify-center order-first md:order-1 lg:order-2 px-4 md:px-0 h-full">
           <ImageLoop />
         </div>
 
         {/* Contenido de texto - Segundo en móvil */}
-        <div className="flex flex-col gap-3 md:gap-5 text-white pt-4 md:pt-8 text-center md:text-left">
+        <div className="flex flex-col gap-3 md:gap-5 text-white pt-4 md:pt-8 text-center md:text-left order-1 md:order-2 lg:order-1">
           <span className="text-sm md:text-base font-bold uppercase">{slide.subtitle}</span>
           <h1 className="text-4xl md:text-[85px] leading-tight md:leading-[90px] font-bold uppercase">{slide.title}</h1>
           <p className="text-sm md:text-base pb-2">{slide.description}</p>
 
-          <div className="flex flex-col sm:flex-row md:flex-row gap-3 md:gap-[14px] items-center md:items-start">
-            
+          <div className="flex flex-col sm:flex-col md:flex-row gap-3 md:gap-[14px] items-center md:items-start">
+            <div className="flex flex-col sm:flex-col md:flex-row gap-3 md:gap-[14px] items-center md:items-start">
             <Button variant="gradient" className="w-full sm:w-auto" onClick={() => navigate("/contacto")}>
               {slide.primaryButton.label}
               {slide.primaryButton.icon && (
@@ -94,12 +94,13 @@ export const HeroSection = () => {
               )}
             </Button>
             
-
             {slide.secondaryButton && (
               <Button variant="outline" className="w-full sm:w-auto" onClick={() => navigate("/servicios")}>
                 {slide.secondaryButton.label}
               </Button>
             )}
+            </div>
+           
           </div>
         </div>
       </div>

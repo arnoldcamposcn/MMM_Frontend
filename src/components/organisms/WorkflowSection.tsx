@@ -130,7 +130,7 @@ export const WorkflowSection: React.FC = () => {
         {/* INTRO SECTION */}
         <section className="w-full">
           <div className="text-center">
-            <h1 className="text-2xl md:text-3xl font-sans font-bold uppercase pb-4">
+            <h1 className="text-2xl md:text-[28px] font-sans font-bold uppercase pb-4">
               {t("home.workflow.title")}
             </h1>
             <p className="mt-2 text-base max-w-2xl mx-auto">
@@ -140,7 +140,7 @@ export const WorkflowSection: React.FC = () => {
         </section>
 
         {/* TIMELINE SECTION */}
-        <section className="timeline mt-12 w-full max-w-7xl">
+        <section className="timeline mt-6 md:mt-12 w-full max-w-7xl">
           <ul className="">
             {timelineItems.map((item, index) => (
               <TimelineItemComponent key={item.id} item={item} index={index} />
