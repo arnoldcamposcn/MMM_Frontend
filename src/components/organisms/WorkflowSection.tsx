@@ -111,7 +111,7 @@ const TimelineItemComponent: React.FC<TimelineItemProps> = ({ item, index }) => 
     <li ref={itemRef} className={itemClasses}>
       <div className={contentClasses}>
         <time className="block text-xl font-bold mb-2 text-black">{item.title}</time>
-        <p className="text-black">{t(item.contentKey)}</p>
+        <p className="text-black text-[15px]">{t(item.contentKey)}</p>
       </div>
     </li>
   );

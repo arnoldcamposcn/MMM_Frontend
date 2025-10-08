@@ -22,12 +22,12 @@ export const PortfolioCard: React.FC<PortfolioCardProps> = ({ image, title, desc
           <img
             src={image}
             alt={title}
-            className="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+            className="w-full h-full object-cover rounded-sm transition-transform duration-300 group-hover:scale-105"
           />
           
           {/* Overlay que aparece en hover */}
           {description && (
-            <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 rounded-lg">
+            <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 rounded-sm">
               <p className="text-black text-sm text-center leading-relaxed font-medium normal-case">
                 {description}
               </p>
@@ -37,7 +37,7 @@ export const PortfolioCard: React.FC<PortfolioCardProps> = ({ image, title, desc
         
         {/* Contenedor de texto flexible que se expande hacia abajo */}
         <div className="flex-1 flex flex-col justify-start pt-4">
-          <h1 className="text-base md:text-lg font-medium uppercase text-center leading-tight">{title}</h1>
+          <h1 className="text-[15px] md:text-[15px] font-medium normal-case text-center leading-tight">{title}</h1>
           {/* <p className="text-sm md:text-sm font-normal whitespace-pre-wrap mt-2">{description}</p> */}
         </div>
       </div>

@@ -9,7 +9,7 @@
 /* 🔹 Componentes reutilizables */
 @layer components {
   .btn-gradient {
-    @apply px-6 py-3.5 rounded-full text-sm font-normal uppercase text-white 
+    @apply px-6 py-3.5 rounded-full text-sm font-normal  text-white 
            bg-gradient-to-r from-emerald-400/80 to-cyan-400/40 hover:opacity-90 
            transition inline-flex items-center justify-center;
   }
@@ -25,7 +25,7 @@
   }
 
   .btn-outline {
-    @apply px-6 py-3.5 rounded-full text-sm font-normal uppercase text-white 
+    @apply px-6 py-3.5 rounded-full text-sm font-normal  text-white 
            inline-flex items-center gap-2 transition relative; /* Añadimos 'relative' para el pseudo-elemento */
     background: transparent;
     z-index: 1; /* Asegura que el contenido del botón esté por encima del borde */
@@ -153,10 +153,10 @@
     @apply bg-gradient-to-r from-emerald-400/80 to-cyan-400/40 text-black;
   }
   .text-paragraph {
-    @apply text-white text-sm md:text-base font-normal text-justify;
+    @apply text-white text-[15px] font-normal text-justify;
   }
   .title-text{
-    @apply text-white text-2xl lg:text-3xl font-semibold uppercase;
+    @apply text-white text-2xl lg:text-[28px] font-semibold uppercase;
   }
   .title-text-black{
     @apply text-black text-2xl lg:text-3xl font-semibold uppercase;
@@ -215,7 +215,7 @@
     mask-image: linear-gradient(to left, black 60%, transparent 100%);
   }
   .menu-services {
-    @apply transition-all duration-300 hover:text-[#53C1A9] cursor-pointer text-base lg:text-xl;
+    @apply transition-all duration-300 hover:text-[#53C1A9] cursor-pointer text-base lg:text-lg font-semibold;
   }
 
   .bg-cyan-gradient-card {

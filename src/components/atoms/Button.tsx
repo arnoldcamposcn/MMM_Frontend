@@ -13,7 +13,7 @@ export const Button: React.FC<ButtonProps> = ({
   className,
   ...props
 }) => {
-  const baseClasses = "text-[14px] font-medium flex items-center justify-center gap-2 cursor-pointer relative";
+  const baseClasses = "text-[15px] font-medium flex items-center justify-center gap-2 cursor-pointer relative capitalize";
   
   const variantClasses = {
     gradient: "btn-gradient",

@@ -20,8 +20,8 @@ export const FormInput = <T extends FieldValues>({
       type={type}
       placeholder={placeholder}
       {...register(name as unknown as Path<T>)}
-      className="text-black w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-cyan-500"
+      className="text-black w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-cyan-500 text-[15px]"
     />
-    {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
+    {error && <p className="text-red-500 text-[15px] mt-1">{error}</p>}
   </div>
 );

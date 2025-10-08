@@ -77,8 +77,8 @@ export const ServicesSection = () => {
   if (error) return <p className="text-white text-center">{t("servicesSection.error")}</p>;
 
   return (
-    <div className="flex flex-col items-center justify-center px-0 md:px-8 w-full">
-      <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white text-center pb-8 md:pb-12">
+    <div className="flex flex-col items-center justify-center px-0 md:px-12 w-full">
+      <h1 className="text-2xl md:text-3xl lg:text-3xl font-bold text-white text-center pb-8 md:pb-10">
         {t("servicesSection.title")}
       </h1>
       
@@ -135,7 +135,7 @@ export const ServicesSection = () => {
       </div>
 
       {activeService && (
-        <div className="grid grid-cols-1 lg:grid-cols-[6fr_5fr] items-center justify-center gap-8 lg:gap-14 mt-8 md:mt-12 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-[6fr_5fr] items-center justify-center gap-8 lg:gap-14 mt-8 md:mt-10 w-full">
           <div className="order-1 lg:order-1">
             <img 
               src={activeService.image} 
@@ -143,8 +143,8 @@ export const ServicesSection = () => {
               className="rounded-lg object-cover w-full h-auto max-w-md mx-auto lg:max-w-none" 
             />
           </div>
-          <div className="flex flex-col gap-4 lg:gap-6 order-2 lg:order-2 px-0 lg:px-0">
-            <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-gradient inline-flex items-center gap-2">
+          <div className="flex flex-col gap-4 lg:gap-5 order-2 lg:order-2 px-0 lg:px-0">
+            <span className="text-xs md:text-[15px] font-bold  tracking-widest text-gradient inline-flex items-center gap-2">
               <span className="w-6 h-0.5 bg-gradient-to-r from-[#53C1A9] to-[#4AB39A]"></span>
               {activeService.category.name}
             </span>
@@ -153,13 +153,13 @@ export const ServicesSection = () => {
               {activeService.title}
             </h2>
             
-            <p className="text-white text-justify text-sm md:text-base leading-relaxed">
+            <p className="text-white text-justify text-sm md:text-[15px] leading-relaxed">
               {activeService.description}
             </p>
             
-            <div className="flex justify-center lg:justify-start mt-2 md:mt-4">
+            <div className="flex justify-center lg:justify-start mt-2 md:mt-0">
               <Link to={`/servicios/${activeService.slug}`}>
-                <Button variant="gradient" className="uppercase group text-sm md:text-base px-6 py-3">
+                <Button variant="gradient" className="px-5 py-3">
                   <span>{t("servicesSection.button")}</span>
                   <svg className="w-4 h-4 md:w-5 md:h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

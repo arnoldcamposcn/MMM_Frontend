@@ -29,8 +29,8 @@ export const AboutPage = () => {
                     <div className="flex flex-col items-center justify-center gap-4 px-0 md:px-0 lg:px-8">
                         <div className="grid grid-cols-1 md:grid-cols-[6fr_5fr] items-center justify-center gap-14">
                             <div><img src={nosotrosImg} alt="img1" /></div>
-                            <div className="flex flex-col gap-6 md:gap-6">
-                                <h1 className="title-text">{t("about.title")}</h1>
+                            <div className="flex flex-col gap-5 md:gap-5">
+                                <h1 className="text-[28px] font-bold text-white uppercase">{t("about.title")}</h1>
                                 <p className="text-paragraph">{t("about.description")}</p>
                             </div>
                         </div>
@@ -43,9 +43,9 @@ export const AboutPage = () => {
 
                 {/* nuestro proposito  */}
                 <Container>
-                    <div className="flex flex-col items-center justify-center gap-12 md:gap-14 px-8 pt-20">
+                    <div className="flex flex-col items-center justify-center gap-12 md:gap-12 px-8 pt-20">
                         <div className="text-center">
-                            <h2 className="text-2xl md:text-3xl font-semibold text-white uppercase">{t("about.purpose.title")}</h2>
+                            <h2 className="text-2xl md:text-[28px] font-semibold text-white uppercase">{t("about.purpose.title")}</h2>
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-6 md:gap-6 max-w-3xl mx-auto">

@@ -55,7 +55,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = 
   if (error) return <p className="text-center text-white">{t("portfolio.section.error")}</p>;
 
   return (
-    <div className="flex flex-col items-center justify-center gap-6 md:gap-10">
+    <div className="flex flex-col items-center justify-center gap-6 md:gap-8">
       {showTitle && (
         <h1 className="text-2xl md:text-3xl font-bold text-white text-center uppercase">
           {t("portfolio.section.title")}
@@ -159,7 +159,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = 
         {visibleCount < filtered.length && (
           <Button
             variant="gradient"
-            className="uppercase"
+            className=""
             onClick={() => setVisibleCount((prev) => prev + 8)}
           >
             {t("portfolio.section.buttons.seeMore")}

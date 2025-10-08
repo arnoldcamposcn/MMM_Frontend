@@ -27,14 +27,14 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ data }) => {
     <div className={`grid grid-rows-[1fr_auto] px-10 py-16 rounded-3xl h-full cursor-pointer ${cardStyles}`}>
       <div>
         <h3 className="text-xl font-bold uppercase">{category}</h3>
-        <p className="mt-4 text-base opacity-80">{text}</p>
+        <p className="mt-4 text-[15px] opacity-80">{text}</p>
       </div>
       <div className="mt-8">
         <div className="flex items-center gap-4">
           <img src={author.avatar} alt={author.name} className="w-12 h-12 rounded-full object-cover" />
           <div>
             <p className="font-bold">{author.name}</p>
-            <p className="text-sm opacity-80">{author.title}</p>
+            <p className="text-[15px] opacity-80">{author.title}</p>
           </div>
         </div>
         <div className="flex mt-0 md:mt-4">

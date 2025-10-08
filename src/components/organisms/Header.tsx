@@ -65,7 +65,7 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 py-6 transition-all duration-300 ${className} ${
+      className={`fixed top-0 left-0 right-0 z-50 py-4 md:py-6 transition-all duration-300 ${className} ${
         isScrolled ? "bg-grayCustom bg-opacity-90 backdrop-blur-lg shadow-custom" : "bg-transparent"
       }`}
     >

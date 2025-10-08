@@ -74,7 +74,7 @@
   "footer": {
     "description": "Conectamos innovación, ESG y tecnología en la minería de LATAM.",
     "company": {
-      "title": "Compañia",
+      "title": "MENU",
       "links": [
         { "label": "Nosotros", "href": "/nosotros" },
         { "label": "Servicios", "href": "/servicios" },
@@ -100,7 +100,7 @@
       ]
     },
     "newsletter": {
-      "title": "Subscribe",
+      "title": "Suscribete",
       "description": "Recibe en tu correo las últimas noticias, análisis y tendencias de la minería moderna. Sé parte de la comunidad que conecta innovación, ESG y tecnología en LATAM.",
       "placeholder": "Introduce tu email",
       "button": "Subscribirme",
@@ -313,7 +313,7 @@
     "title": "NUESTROS SERVICIOS",
     "loading": "Cargando categorías...",
     "error": "Error al cargar categorías.",
-    "button": "conocer servicio"
+    "button": "Conocer Servicio"
   }
 }
   

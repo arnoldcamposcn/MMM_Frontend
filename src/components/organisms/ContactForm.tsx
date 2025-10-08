@@ -31,10 +31,10 @@ export const ContactForm: React.FC = () => {
 
   return (
     <div className="bg-white px-4 md:px-12 py-8 md:py-12 rounded-3xl">
-      <h2 className="text-2xl lg:text-3xl font-bold text-grayCustom uppercase">
+      <h2 className="text-2xl lg:text-[26px] font-bold text-grayCustom uppercase">
         {t("contact.form.title")}
       </h2>
-      <p className="mt-4 text-gray-600">
+      <p className="mt-4 text-[15px] text-gray-600">
         {t("contact.form.description")}
       </p>
 
@@ -45,7 +45,7 @@ export const ContactForm: React.FC = () => {
           register={register}
         />
         {errors.name && (
-          <p className="text-red-500 text-sm">{errors.name.message}</p>
+          <p className="text-red-500 text-[15px]">{errors.name.message}</p>
         )}
 
         <FormInput<formContact>
@@ -54,7 +54,7 @@ export const ContactForm: React.FC = () => {
           register={register}
         />
         {errors.empresa_organizacion && (
-          <p className="text-red-500 text-sm">
+          <p className="text-red-500 text-[15px]">
             {errors.empresa_organizacion.message}
           </p>
         )}
@@ -65,12 +65,12 @@ export const ContactForm: React.FC = () => {
           register={register}
         />
         {errors.email && (
-          <p className="text-red-500 text-sm">{errors.email.message}</p>
+          <p className="text-red-500 text-[15px]">{errors.email.message}</p>
         )}
 
         <FormInput<formContact> name="position" placeholder={t("contact.form.fields.position")} register={register} />
         {errors.position && (
-          <p className="text-red-500 text-sm">{errors.position.message}</p>
+          <p className="text-red-500 text-[15px]">{errors.position.message}</p>
         )}
 
         <FormInput<formContact>
@@ -79,7 +79,7 @@ export const ContactForm: React.FC = () => {
           register={register}
         />
         {errors.website && (
-          <p className="text-red-500 text-sm">{errors.website.message}</p>
+          <p className="text-red-500 text-[15px]">{errors.website.message}</p>
         )}
 
         <FormInput<formContact>
@@ -88,17 +88,17 @@ export const ContactForm: React.FC = () => {
           register={register}
         />
         {errors.message && (
-          <p className="text-red-500 text-sm">{errors.message.message}</p>
+          <p className="text-red-500 text-[15px]">{errors.message.message}</p>
         )}
 
         {isSubmitSuccessful && (
-        <p className="text-green-500 text-sm">{t("contact.form.success")}</p>
+        <p className="text-green-500 text-[15px]">{t("contact.form.success")}</p>
       )}
 
         <Button
           type="submit"
           variant="gradient"
-          className="uppercase text-black"
+          className="uppercase text-black text-[15px]"
           disabled={isSubmitting}
         >
           {isSubmitting

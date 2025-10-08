@@ -6,7 +6,7 @@ import { BrandsGrid } from "../organisms/BrandsGrid";
 import objectImg from "@/assets/cover/object.png";
 import { ServicesSection } from '../organisms/ServicesSection';
 import { Button } from "../atoms/Button";
-import nosotrosImg from "@/assets/all/nosotros.png";
+import nosotrosImg from "@/assets/all/nosotros2.jpg";
 import revistaImg from "@/assets/all/revistamm.png";
 import { TeamCard } from "../molecules/TeamCard";
 import { ContactSection } from "../organisms/ContactSection";
@@ -26,6 +26,8 @@ export const HomePage = () => {
   return (
     <div className="">
       <Header />
+
+
       <section className="bg-gradient min-h-screen flex flex-col pt-24">
         <main className="flex-grow flex items-center">
           <Container className="w-full">
@@ -33,10 +35,14 @@ export const HomePage = () => {
             <img src={objectImg} alt="object" className="w-auto h-auto absolute bottom-0 right-0 img-fade-left" />
           </Container>
         </main>
+
+
         <div className="pt-10 md:pb-0">
           <BrandsGrid />
         </div>
       </section>
+
+
 
       <div className="bg-gradient-inverted">
         <section className="flex flex-col items-center justify-center py-20 md:py-32 lg:py-40">
@@ -49,7 +55,7 @@ export const HomePage = () => {
 
         <section className="flex flex-col items-center justify-center">
           <Container>
-            <div className="px-0 md:px-8">
+            <div className="px-0 md:px-12">
               <PortfolioSection showTitle={true} />
             </div>
           </Container>
@@ -62,18 +68,18 @@ export const HomePage = () => {
       <div>
         <section className="flex flex-col items-center justify-center py-20 md:py-40">
           <Container className="w-full">
-            <div className="flex flex-col items-center justify-center gap-6 md:gap-14 px-0 md:px-8">
+            <div className="flex flex-col items-center justify-center gap-6 md:gap-14 px-0 md:px-12">
               <h1 className="text-2xl md:text-3xl font-bold text-white text-center">{t("home.about.title")}</h1>
 
-            <div className="grid grid-cols-1 md:flex-col lg:grid-cols-[6fr_5fr] items-center justify-center gap-14">
-              <div><img src={nosotrosImg} alt="img1" /></div>
+            <div className="grid grid-cols-1 md:flex-col lg:grid-cols-[6fr_5fr] items-center justify-center gap-16">
+              <div><img src={nosotrosImg} alt="img1" className="rounded-lg" /></div>
 
 
               <div className="flex flex-col gap-4">
-               <div className="flex flex-col gap-6">
+               <div className="flex flex-col gap-5">
                 <div className="flex flex-col gap-3">
-                  <span className="text-sm font-bold uppercase tracking-widest text-gradient inline-flex items-center gap-2">
-                    <span className="w-8 h-0.5 bg-gradient-to-r from-[#53C1A9] to-[#4AB39A]"></span>
+                  <span className="text-[15px] font-bold text-gradient inline-flex items-center gap-2">
+                    <span className="w-8 h-0.5 bg-gradient-to-r from-[#53C1A9] to-[#4AB39A] capitalize"></span>
                      {t("home.about.badge")}
                   </span>
                   <h2 className="text-2xl md:text-3xl font-bold text-white uppercase leading-tight">
@@ -82,12 +88,10 @@ export const HomePage = () => {
                   </h2>
                 </div>
 
-                <div className="h-1 w-20 bg-gradient-to-r from-[#53C1A9] to-[#4AB39A] rounded-full"></div>
-
-                <p className="text-white text-base leading-relaxed">
+                <p className="text-white text-[15px] leading-relaxed">
                 {t("home.about.description")}
                 </p>
-                <div className="flex mt-0 md:mt-4">
+                <div className="flex mt-0 md:mt-0">
                   <Button variant="gradient" className="uppercase group" onClick={() => navigate("/nosotros")}>
                     <span>{t("home.about.button")}</span>
                     <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -109,7 +113,7 @@ export const HomePage = () => {
       <section className="flex flex-col items-center justify-center relative overflow-hidden">
         <Container className="w-full ">
           
-          <div className="flex flex-col items-center justify-center gap-10 px-0 md:px-8 relative">
+          <div className="flex flex-col items-center justify-center gap-10 px-0 md:px-12 relative">
             
             {/* Objetos decorativos de fondo */}
 
@@ -139,9 +143,9 @@ export const HomePage = () => {
               </div>
 
               {/* Contenido de texto enriquecido */}
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-5">
                 <div className="flex flex-col gap-3">
-                  <span className="text-sm font-bold uppercase tracking-widest text-gradient inline-flex items-center gap-2">
+                  <span className="text-[15px] font-bold tracking-widest text-gradient inline-flex items-center gap-2">
                     <span className="w-8 h-0.5 bg-gradient-to-r from-[#53C1A9] to-[#4AB39A]"></span>
                      {t("home.magazine.badge")}
                   </span>
@@ -150,12 +154,11 @@ export const HomePage = () => {
                   </h2>
                 </div>
 
-                <div className="h-1 w-20 bg-gradient-to-r from-[#53C1A9] to-[#4AB39A] rounded-full"></div>
 
-                <p className="text-white text-base leading-relaxed">
+                <p className="text-white text-[15px] leading-relaxed">
                 {t("home.magazine.description")}
                 </p>
-                <div className="flex mt-2 md:mt-4">
+                <div className="flex">
                   <Button variant="gradient" className="uppercase group">
                     <span>{t("home.magazine.button")}</span>
                     <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -176,13 +179,13 @@ export const HomePage = () => {
       <div className="bg-gradient-reverse2">
       <section className="flex flex-col items-center justify-center py-20 md:py-40">
         <Container className="max-w-7xl">
-          <div className="flex flex-col items-center justify-center gap-6 md:gap-12 lg:gap-14 md:px-14 px-8 ">
+          <div className="flex flex-col items-center justify-center gap-6 md:gap-12 lg:gap-14 md:px-12 px-8 ">
             <div className="grid grid-cols-1 md:flex-col lg:grid-cols-[1.5fr_1fr] items-center justify-center gap-6 md:gap-6 lg:gap-14">
               <div>
                 <h1 className="text-2xl md:text-3xl font-bold text-white text-center md:text-left">{t("home.team.title")}</h1>
               </div>
               <div className="pr-0">
-                <p className="text-white pl-0 md:pl-0 lg:pl-20 text-center md:text-left">{t("home.team.description")}</p>
+                <p className="text-white pl-0 md:pl-0 lg:pl-20 text-center md:text-left text-[15px]">{t("home.team.description")}</p>
         </div>
       </div>
 
@@ -204,7 +207,7 @@ export const HomePage = () => {
 
       <section className="flex flex-col items-center justify-center py-20 md:py-40">
       <Container>
-          <div className="flex flex-col gap-6 md:gap-14 px-0 md:px-8">
+          <div className="flex flex-col gap-6 md:gap-12 px-0 md:px-12">
           <h1 className="text-white text-center text-2xl md:text-3xl font-bold uppercase">{t("home.chooseUs.title")}</h1>
           <ChooseUsSection 
             data={chooseUsData}
@@ -226,7 +229,7 @@ export const HomePage = () => {
 
       <section className="flex flex-col items-center justify-center pt-20 md:pt-40 pb-20">
         <Container>
-          <div className="flex flex-col gap-6 md:gap-8 px-0 md:px-8">
+          <div className="flex flex-col gap-6 md:gap-12 px-0 md:px-12">
           <h1 className="text-white text-center text-2xl md:text-3xl font-bold uppercase">{t("home.contact.title")}</h1>
           <ContactSection />
           </div>
