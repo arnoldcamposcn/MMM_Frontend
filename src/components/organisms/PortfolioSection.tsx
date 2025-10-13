@@ -55,7 +55,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = 
   if (error) return <p className="text-center text-white">{t("portfolio.section.error")}</p>;
 
   return (
-    <div className="flex flex-col items-center justify-center gap-6 md:gap-8">
+    <div className="flex flex-col items-center justify-center gap-6 md:gap-10">
       {showTitle && (
         <h1 className="text-2xl md:text-[28px] font-bold text-white text-center uppercase">
           {t("portfolio.section.title")}
@@ -65,7 +65,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = 
       {/* Mobile: Chips scrollables horizontales */}
       <div className="w-full md:hidden">
         <div
-          className="flex gap-2 overflow-x-auto px-4 py-3 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="flex gap-4 overflow-x-auto px-4 py-2 md:py-3 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           role="tablist"
           aria-label={t("portfolio.section.filters.mobileLabel")}
         >
@@ -74,8 +74,10 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = 
             role="tab"
             aria-selected={activeCategoryId === null}
             onClick={() => handleCategoryChange(null)}
-            className={`px-4 py-2 rounded-lg transition whitespace-nowrap snap-start ${
-              activeCategoryId === null ? "bg-white text-black" : "bg-white/10 hover:bg-white/20 text-white"
+            className={`px-2 pb-1 transition whitespace-nowrap snap-start uppercase border-b-2 text-white ${
+              activeCategoryId === null 
+                ? "border-white" 
+                : "border-transparent hover:border-gray-400"
             }`}
           >
             {t("portfolio.section.filters.all")}
@@ -89,8 +91,10 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = 
                 role="tab"
                 aria-selected={active}
                 onClick={() => handleCategoryChange(cat.id)}
-                className={`px-4 py-2 rounded-lg transition whitespace-nowrap snap-start ${
-                  active ? "bg-white text-black" : "bg-white/10 hover:bg-white/20 text-white"
+                className={`px-2 pb-1 transition whitespace-nowrap snap-start uppercase border-b-2 text-white ${
+                  active 
+                    ? "border-white" 
+                    : "border-transparent hover:border-gray-400"
                 }`}
               >
                 {cat.name}
@@ -102,7 +106,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = 
 
       {/* Desktop: filtros en filas */}
       <div
-        className="hidden md:flex flex-wrap items-center justify-center gap-3 md:gap-4 uppercase text-white font-medium py-2"
+        className="hidden md:flex flex-wrap items-center justify-center gap-4 md:gap-6 text-white font-medium"
         role="tablist"
         aria-label={t("portfolio.section.filters.desktopLabel")}
       >
@@ -111,8 +115,10 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = 
           role="tab"
           aria-selected={activeCategoryId === null}
           onClick={() => handleCategoryChange(null)}
-          className={`menu-services px-4 py-2 rounded-lg transition ${
-            activeCategoryId === null ? "bg-white text-black" : "bg-white/10 hover:bg-white/20 text-white"
+          className={`menu-services px-0 pb-1 transition uppercase border-b-2 ${
+            activeCategoryId === null 
+              ? "border-white" 
+              : "border-transparent hover:border-gray-400"
           }`}
         >
           {t("portfolio.section.filters.all")}
@@ -126,8 +132,10 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = 
               role="tab"
               aria-selected={active}
               onClick={() => handleCategoryChange(cat.id)}
-              className={`menu-services px-4 py-2 rounded-lg transition ${
-                active ? "bg-white text-black" : "bg-white/10 hover:bg-white/20 text-white"
+              className={`menu-services px-0 pb-1 transition uppercase border-b-2 ${
+                active 
+                  ? "border-white" 
+                  : "border-transparent hover:border-gray-400"
               }`}
             >
               {cat.name}
@@ -155,7 +163,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = 
       </div>
 
       {/* Botones condicionales */}
-      <div className="flex flex-col items-center gap-4 mt-0 md:mt-5">
+      <div className="flex flex-col items-center gap-4 mt-0">
         {visibleCount < filtered.length && (
           <Button
             variant="gradient"

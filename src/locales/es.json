@@ -150,7 +150,7 @@
     "loading": "Cargando portafolio...",
     "error": "Hubo un error al cargar el portafolio.",
     "section": {
-      "title": "CONOCE NUESTROS PROYECTOS",
+      "title": "NUESTROS PROYECTOS",
       "loading": "Cargando proyectos...",
       "error": "Hubo un error al cargar los proyectos.",
       "filters": {
@@ -246,7 +246,7 @@
       "button": "conocer revista"
     },
     "about": {
-      "title": "NOSOTROS",
+      "title": "SOBRE NOSOTROS",
       "badge": "Conoce Meta Mining Media",
       "subtitle": "Descubre quiénes somos",
       "description": "Somos Meta Mining Media (MMM), una productora y agencia digital especializada en el sector minero. Nacimos para conectar, inspirar y fortalecer la industria mediante creatividad, innovación y contenidos de alto impacto",

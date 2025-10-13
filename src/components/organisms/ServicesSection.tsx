@@ -135,7 +135,7 @@ export const ServicesSection = () => {
       </div>
 
       {activeService && (
-        <div className="grid grid-cols-1 lg:grid-cols-[6fr_5fr] items-center justify-center gap-8 lg:gap-14 mt-8 md:mt-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-[6fr_5fr] items-center justify-center gap-6 lg:gap-14 mt-6 md:mt-10 w-full">
           <div className="order-1 lg:order-1">
             <img 
               src={activeService.image} 
@@ -149,11 +149,11 @@ export const ServicesSection = () => {
               {activeService.category.name}
             </span>
             
-            <h2 className="text-xl md:text-2xl lg:text-[28px] font-semibold text-white uppercase leading-tight">
+            <h2 className="text-xl md:text-2xl lg:text-[28px] font-semibold text-white  leading-tight">
               {activeService.title}
             </h2>
             
-            <p className="text-white text-justify text-sm md:text-[15px] leading-relaxed">
+            <p className="text-white text-left md:text-justify text-sm md:text-[15px] leading-relaxed">
               {activeService.description}
             </p>
             

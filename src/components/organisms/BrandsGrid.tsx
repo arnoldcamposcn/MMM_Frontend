@@ -1,7 +1,3 @@
-import iconflanders from "@/assets/brands/flanders-logo_bN 1.png";
-import iconIMSS from "@/assets/brands/logotipo_IMSS.png";
-import iconEDF from "@/assets/brands/edf-logo BN.png";
-import iconMREL from "@/assets/brands/MREL.png";
 import { StarIcon } from "../atoms/StarIcon";
 
 interface Brand {
@@ -10,15 +6,15 @@ interface Brand {
 }
 
 const logos: Brand[] = [
-  { src: iconflanders, alt: "Brand 1" },
-  { src: iconIMSS, alt: "Brand 2" },
-  { src: iconEDF, alt: "Brand 3" },
-  { src: iconMREL, alt: "Brand 4" },
+  { src: "/brands/BRAND-FLANDERS.svg", alt: "Brand 1" },
+  { src: "/brands/BRAND-INITIMINING.svg", alt: "Brand 2" },
+  { src: "/brands/BRAND-EDF.svg", alt: "Brand 3" },
+  { src: "/brands/BRAND-MREL.svg", alt: "Brand 4" },
 ];
 
 export const BrandsGrid = () => {
   return (
-    <section className="py-6">
+    <section className="py-4 md:py-6">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         {/* Caja de estrellas - aparece abajo en móvil, arriba en desktop */}
         <div className="relative mb-8 md:order-1 order-2">

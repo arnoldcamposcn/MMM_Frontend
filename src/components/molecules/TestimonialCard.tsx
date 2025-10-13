@@ -37,7 +37,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ data }) => {
             <p className="text-[15px] opacity-80">{author.title}</p>
           </div>
         </div>
-        <div className="flex mt-0 md:mt-4">
+        <div className="flex mt-4 md:mt-4">
           {[...Array(5)].map((_, i) => (
             <StarIcon key={i} className="w-5 h-5 text-gold" />
           ))}
