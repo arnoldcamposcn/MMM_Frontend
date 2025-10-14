@@ -2,15 +2,20 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Container from '../layouts/Container';
 import ValueCard from '../molecules/ValueCard';
-import { useValuesData } from '../../data/values.data';
+import { useValuesData, type ValueData } from '../../data/values.data';
 
 interface ValuesSectionProps {
   title?: string;
+  data?: ValueData[]; // Permitir pasar datos externos
 }
 
-const ValuesSection: React.FC<ValuesSectionProps> = ({ title }) => {
+const ValuesSection: React.FC<ValuesSectionProps> = ({ title, data: externalData }) => {
   const { t } = useTranslation();
-  const data = useValuesData();
+  const defaultData = useValuesData();
+  
+  // Usar datos externos si se proporcionan, sino usar los valores por defecto
+  const data = externalData || defaultData;
+  
   return (
     <Container>
       <div className="flex flex-col items-center justify-center gap-6 md:gap-12 px-2 md:px-12">

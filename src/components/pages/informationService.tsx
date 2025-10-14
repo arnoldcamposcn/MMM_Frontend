@@ -5,6 +5,7 @@ import { Breadcrumb } from "../organisms/Breadcrumb"
 import { CarouselSlider } from "../organisms/carouselSlider"
 import Faq from '../organisms/Faq';
 import { useFaqData } from '../../data/faq.data';
+import { useBenefitsData } from '../../data/benefits.data';
 import ChooseUsSection from '../organisms/ChooseUsSection';
 import ValuesSection from '../organisms/ValuesSection';
 import { ContactSection } from "../organisms/ContactSection";
@@ -13,13 +14,13 @@ import { useParams } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
 import { getInformationService } from "../../services/articles/article.service";
 import type { informationService } from "../../schema/mmm/types";
-import flujoImg from "@/assets/all/fluijo.png";
 import { WorkflowSection } from '../organisms/WorkflowSection';
 
 export const InformationServicePage = () => {
     const { t } = useTranslation();
     const { slug } = useParams<{ slug: string }>();
     const faqData = useFaqData();
+    const benefitsData = useBenefitsData();
 
     const { data, loading, error } = useFetch<informationService>(
         () => getInformationService(slug || ""),
@@ -72,7 +73,10 @@ export const InformationServicePage = () => {
                 </Container>
 
                 <Container className="pb-20 md:pb-40">
-                    <ValuesSection />
+                    <ValuesSection 
+                        title={t("Beneficios")}
+                        data={benefitsData}
+                    />
                 </Container>
 
 

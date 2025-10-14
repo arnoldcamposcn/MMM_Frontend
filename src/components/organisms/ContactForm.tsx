@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormInput } from "../molecules/FormInput";
+import { FormSelect } from "../molecules/FormSelect";
 import { Button } from "../atoms/Button";
 import { formContactSchema, type formContact } from "../../schema/mmm/types";
 import { postFormContact } from "../../services/articles/article.service";
@@ -48,10 +49,14 @@ export const ContactForm: React.FC = () => {
           <p className="text-red-500 text-[15px]">{errors.name.message}</p>
         )}
 
-        <FormInput<formContact>
+        <FormSelect<formContact>
           name="empresa_organizacion"
           placeholder={t("contact.form.fields.company")}
           register={register}
+          options={[
+            { value: "Empresa", label: t("contact.form.fields.companyOptions.business") },
+            { value: "Organización", label: t("contact.form.fields.companyOptions.organization") },
+          ]}
         />
         {errors.empresa_organizacion && (
           <p className="text-red-500 text-[15px]">

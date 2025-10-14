@@ -1,13 +1,13 @@
-// import  App  from "../App"
+// import  App  from "./App"
 import { BrowserRouter, Routes, Route} from "react-router-dom"
-import MainLayout from "../components/layouts/MainLayout"
-import { LoadingWrapper } from "../components/layouts/LoadingWrapper"
-import { HomePage } from "../components/pages/home"
-import { PortfolioPage } from "../components/pages/portfolio"
-import { AboutPage } from "../components/pages/about"
-import { ContactPage } from "../components/pages/contact"
-import { ServicesPage } from "../components/pages/services"
-import { InformationServicePage } from "../components/pages/informationService"
+import MainLayout from "./components/layouts/MainLayout"
+import { LoadingWrapper } from "./components/layouts/LoadingWrapper"
+import { HomePage } from "./components/pages/home"
+import { PortfolioPage } from "./components/pages/portfolio"
+import { AboutPage } from "./components/pages/about"
+import { ContactPage } from "./components/pages/contact"
+import { ServicesPage } from "./components/pages/services"
+import { InformationServicePage } from "./components/pages/informationService"
 
 const AppNavigator = () => {
   return (

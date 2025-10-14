@@ -131,6 +131,10 @@
       "fields": {
         "name": "Enter full name",
         "company": "Company / Organization",
+        "companyOptions": {
+          "business": "Company",
+          "organization": "Organization"
+        },
         "email": "Corporate email",
         "position": "Role",
         "website": "Website",

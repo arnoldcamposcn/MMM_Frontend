@@ -131,6 +131,10 @@
       "fields": {
         "name": "Ingresar nombres completos",
         "company": "Empresa / Organización",
+        "companyOptions": {
+          "business": "Empresa",
+          "organization": "Organización"
+        },
         "email": "Correo corporativo",
         "position": "Rol",
         "website": "Página web",
