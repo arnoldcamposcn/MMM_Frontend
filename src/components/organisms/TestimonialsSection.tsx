@@ -4,12 +4,16 @@ import right from '@/assets/icons/arrow-right.png';
 import TestimonialCard from '../molecules/TestimonialCard';
 import { Carousel } from '../libraries/carousel/Carousel';
 import { useFetch } from '../../hooks/useFetch';
+import { usePageLoading } from '../../hooks/usePageLoading';
 import { getTestimonials } from '../../services/articles/article.service';
 import type { testimonials } from '../../schema/mmm/types';
 import { type TestimonialCardType } from '../../data/testimonials.data';
 
 const TestimonialsSection = () => {
   const { data, loading, error } = useFetch<testimonials[]>(getTestimonials);
+
+  // Registrar estado de carga en el contexto global
+  usePageLoading(loading, 'testimonials-section');
 
   const cardTypes: TestimonialCardType[] = ['dark', 'gradient', 'light'];
 

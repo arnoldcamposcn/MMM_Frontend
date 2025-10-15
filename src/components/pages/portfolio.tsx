@@ -20,7 +20,7 @@ export const PortfolioPage = () => {
 
   return (
     <>
-      <section className="bg-gradient min-h-screen flex flex-col">
+      <section className="bg-about min-h-screen flex flex-col">
         <Header />
 
         <main>

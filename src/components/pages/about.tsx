@@ -9,12 +9,11 @@ import Header from '../organisms/Header';
 
 import nosotrosImg from "@/assets/all/nosotros.png";
 
-
 export const AboutPage = () => {
     const { t } = useTranslation();
     
     return (
-        <section className="bg-gradient min-h-screen flex flex-col">
+        <section className="bg-about min-h-screen flex flex-col">
             <Header />
             <main>
                 <Container>

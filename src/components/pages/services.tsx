@@ -19,7 +19,7 @@ export const ServicesPage = () => {
     return (
         <>
             <main>
-                <section className="bg-gradient">
+                <section className="bg-about">
                     <Header />
                     <Container>
                     <div className=" pt-24 md:pt-24 pb-8 md:pb-12">

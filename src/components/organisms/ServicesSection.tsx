@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useFetch } from '../../hooks/useFetch';
+import { usePageLoading } from '../../hooks/usePageLoading';
 import { getServices } from '../../services/articles/article.service';
 import type { servicesSchema } from '../../schema/mmm/types';
 import { Button } from '../atoms/Button';
@@ -18,6 +19,9 @@ export const ServicesSection = () => {
   const [activeService, setActiveService] = useState<servicesSchema | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useResponsive();
+
+  // Registrar estado de carga en el contexto global
+  usePageLoading(loading, 'services-section');
 
   const groupedServices = useMemo(() => {
     if (!services) return {};

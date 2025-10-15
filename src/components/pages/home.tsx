@@ -192,8 +192,7 @@ export const HomePage = () => {
       </div>
 
 
-
-      <div className="bg-gradient-reverse2">
+      <div className="bg-about">
         <section className="flex flex-col items-center justify-center py-20 md:py-40">
           <Container>
             <div className="flex flex-col items-center justify-center gap-6 md:gap-12 lg:gap-14 md:px-10 lg:px-12 px-8 ">

@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { PortfolioCard } from "../molecules/PortfolioCard";
 import { Button } from "../atoms/Button";
 import { useFetch } from "../../hooks/useFetch";
+import { usePageLoading } from "../../hooks/usePageLoading";
 import { getPortfolio } from "../../services/articles/article.service";
 import { Link } from "react-router-dom";
 
@@ -24,6 +25,9 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ showTitle = 
   const { data: portfolioItems, loading, error } = useFetch<PortfolioItem[]>(getPortfolio);
   const [activeCategoryId, setActiveCategoryId] = useState<number | null>(null);
   const [visibleCount, setVisibleCount] = useState<number>(8);
+
+  // Registrar estado de carga en el contexto global
+  usePageLoading(loading, 'portfolio-section');
 
   const categories = useMemo(() => {
     const map = new Map<number, string>();

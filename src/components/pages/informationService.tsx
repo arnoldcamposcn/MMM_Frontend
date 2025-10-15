@@ -12,6 +12,7 @@ import { ContactSection } from "../organisms/ContactSection";
 import TestimonialsSection from "../organisms/TestimonialsSection";
 import { useParams } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
+import { usePageLoading } from "../../hooks/usePageLoading";
 import { getInformationService } from "../../services/articles/article.service";
 import type { informationService } from "../../schema/mmm/types";
 import { WorkflowSection } from '../organisms/WorkflowSection';
@@ -27,12 +28,14 @@ export const InformationServicePage = () => {
         [slug]
     );
 
+    usePageLoading(loading, `information-service-${slug}`);
+
     if (loading) return <p>{t("informationService.loading")}</p>;
     if (error) return <p>{t("informationService.error")}</p>;
     if (!data) return <p>{t("informationService.notFound")}</p>;
 
     return (
-        <section className="bg-gradient min-h-screen flex flex-col">
+        <section className="bg-about min-h-screen flex flex-col">
             <Header />
             <main>
                 <Container>
