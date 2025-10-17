@@ -21,7 +21,7 @@ const ImageLoop = () => {
   const images = [
     "/slider/merchandising.webp", 
     "/slider/servicio3d.webp",
-    "/slider/produccion.webp",
+    // "/slider/produccion.webp",
   ];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 

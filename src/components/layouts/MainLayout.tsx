@@ -16,7 +16,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       <Footer
         onNewsletterSubscribe={() => {}}
         companyName="Meta Mining"
-        description="Revista especializada en minería: tu fuente confiable de noticias, análisis y tendencias en minería moderna."
+        description="Conectamos al sector minero con contenidos creativos, aliados estratégicos y producciones de alto impacto."
       />
     </div>
   );

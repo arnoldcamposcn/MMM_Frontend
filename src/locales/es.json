@@ -61,12 +61,12 @@
           "title": "Jefe de Proyectos - Meta Mining Media"
         },
         {
-          "name": "Jorge Ramirez",
-          "title": "Lider de Operaciones - Meta Mining Media"
+          "name": "July Risco",
+          "title": "Asistente de Operaciones - Meta Mining Media"
         },
         {
-          "name": "Fernando López",
-          "title": "Lider de desarrollo - Meta Mining Media"
+          "name": "Victor Porta",
+          "title": "Desarrollador Senior - Meta Mining Media"
         }
       ]
     }
@@ -101,10 +101,10 @@
     },
     "newsletter": {
       "title": "Suscribete",
-      "description": "Recibe en tu correo las últimas noticias, análisis y tendencias de la minería moderna. Sé parte de la comunidad que conecta innovación, ESG y tecnología en LATAM.",
+      "description": "Suscríbete y recibe en tu correo noticias clave, análisis y tendencias del sector minero. Conecta con innovación, tecnología y desarrollo sostenible en toda LATAM.",
       "placeholder": "Introduce tu email",
       "button": "Subscribirme",
-      "disclaimer": "By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company."
+      "disclaimer": "Al suscribirse, acepta nuestra Política de privacidad y brinda su consentimiento para recibir actualizaciones de nuestra empresa."
     },
     "copyright": "© {{year}} Codea Mining Media. Derechos reservados"
   },
@@ -267,20 +267,20 @@
       "title": "¿POR QUÉ ELEGIRNOS?",
       "items": [
         {
-          "title": "Dominio técnico minero",
-          "description": "Entendemos los procesos de la industria con rigor y precisión. Traducimos la complejidad técnica en contenidos claros y atractivos."
+          "title": "Especialización minera",
+          "description": "Conocemos a fondo los procesos y lenguajes del sector. Transformamos lo técnico en narrativas visuales claras, confiables y atractivas."
         },
         {
-          "title": "Innovación en cada proyecto",
-          "description": "Aplicamos 3D, VR/360°, drones y data storytelling para crear experiencias únicas que potencian la comunicación en minería."
+          "title": "Tecnología innovadora",
+          "description": "Utilizamos herramientas como 3D, VR/360°, drones y data storytelling para crear contenidos inmersivos que conectan con audiencias especializadas."
         },
         {
-          "title": "Producción integral",
-          "description": "Nos encargamos de todo el ciclo: planificación, producción, distribución y medición de impacto, asegurando calidad en cada etapa."
+          "title": "Servicio integral",
+          "description": "Gestionamos todo el proceso: desde la planificación hasta la medición de impacto, cuidando cada detalle para asegurar calidad y coherencia."
         },
         {
-          "title": "Comunidad y alcance",
-          "description": "No solo producimos, también conectamos: revista Meta Mining, CODEA Mining Fest y canal de YouTube con proyección en LATAM."
+          "title": "Red de valor en LATAM",
+          "description": "Más que contenidos, construimos comunidad: Meta Mining, CODEA Mining Fest y nuestro canal de YouTube nos posicionan como referentes en la región."
         }
       ]
     },

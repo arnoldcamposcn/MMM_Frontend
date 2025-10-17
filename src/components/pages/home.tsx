@@ -17,6 +17,7 @@ import { PortfolioSection } from "../organisms/PortfolioSection";
 import { useTeamMembers } from "../../data/team.data";
 import { useNavigate } from 'react-router-dom';
 import { WorkflowSection } from "../organisms/WorkflowSection";
+import { FadeInSection } from "../atoms/FadeInSection";
 
 
 export const HomePage = () => {
@@ -27,6 +28,8 @@ export const HomePage = () => {
     <div className="">
       <Header />
 
+
+    
 
       <section className="bg-gradient min-h-screen flex flex-col pt-24">
         <main className="flex-grow flex items-center">
@@ -44,15 +47,22 @@ export const HomePage = () => {
 
 
 
+    
+
       <div className="bg-gradient-inverted">
-        <section className="flex flex-col items-center justify-center py-20 md:py-32 lg:py-40">
+
+      <FadeInSection delay={0.2} >
+      <section className="flex flex-col items-center justify-center py-20 md:py-32 lg:py-40">
           <Container>
             <ServicesSection />
           </Container>
         </section>
+        </FadeInSection>
+       
 
 
 
+        <FadeInSection delay={0.2} >  
         <section className="flex flex-col items-center justify-center">
           <Container>
             <div className="px-0 md:px-12 lg:px-12">
@@ -60,11 +70,12 @@ export const HomePage = () => {
             </div>
           </Container>
         </section>
-
+        </FadeInSection>
 
 
 
         <div>
+        <FadeInSection delay={0.2} >  
           <section className="flex flex-col items-center justify-center py-20 md:py-40">
             <Container className="w-full">
               <div className="flex flex-col items-center justify-center gap-6 md:gap-14 px-0 md:px-10 lg:px-12">
@@ -122,12 +133,16 @@ export const HomePage = () => {
               </div>
             </Container>
           </section>
+        </FadeInSection>
+
         </div>
 
 
 
         {/* Revista meta mining  */}
         <section className="flex flex-col items-center justify-center relative overflow-hidden">
+        <FadeInSection delay={0.2} >  
+
           <Container className="w-full ">
 
             <div className="flex flex-col items-center justify-center gap-10 px-0 md:px-12 relative">
@@ -188,12 +203,15 @@ export const HomePage = () => {
               </div>
             </div>
           </Container>
+        </FadeInSection>
         </section>
       </div>
 
 
       <div className="bg-about">
         <section className="flex flex-col items-center justify-center py-20 md:py-40">
+        <FadeInSection delay={0.2} >  
+
           <Container>
             <div className="flex flex-col items-center justify-center gap-6 md:gap-12 lg:gap-14 md:px-10 lg:px-12 px-8 ">
               <div className="grid grid-cols-1 md:flex-col lg:grid-cols-[1.5fr_1fr] items-center justify-center gap-6 md:gap-6 lg:gap-14">
@@ -212,15 +230,20 @@ export const HomePage = () => {
               </div>
             </div>
           </Container>
+        </FadeInSection>
         </section>
 
 
         <div className="">
+          <FadeInSection delay={0.2} >  
           <TestimonialsSection />
+          </FadeInSection>
         </div>
 
 
         <section className="flex flex-col items-center justify-center py-20 md:py-40">
+          <FadeInSection delay={0.2} >  
+
           <Container>
             <div className="flex flex-col gap-6 md:gap-12 px-0 md:px-12">
               <h1 className="text-white text-center text-2xl md:text-[28px] font-bold uppercase">{t("home.chooseUs.title")}</h1>
@@ -229,6 +252,7 @@ export const HomePage = () => {
               />
             </div>
           </Container>
+          </FadeInSection>
         </section>
 
 
@@ -240,12 +264,14 @@ export const HomePage = () => {
 
 
         <section className="flex flex-col items-center justify-center pt-20 md:pt-40 pb-20">
+        <FadeInSection delay={0.2} >  
           <Container>
             <div className="flex flex-col gap-6 md:gap-12 px-0 md:px-12">
               <h1 className="text-white text-center text-2xl md:text-[28px] font-bold uppercase">{t("home.contact.title")}</h1>
               <ContactSection />
             </div>
           </Container>
+          </FadeInSection>
         </section>
       </div>
 

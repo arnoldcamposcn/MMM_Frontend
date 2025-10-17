@@ -14,12 +14,12 @@ export const useTeamMembers = (): TeamMember[] => {
   
   return [
     { member: { name: t("about.team.members.0.name"), title: t("about.team.members.0.title") } },
-    { image: "/people/avatar1.jpg" },
+    { image: "/people/bill-clint.jpg" },
     { member: { name: t("about.team.members.1.name"), title: t("about.team.members.1.title") } },
-    { image: "/people/avatar2.jpg" },
+    { image: "/people/nilson-garrido.jpg" },
     { member: { name: t("about.team.members.2.name"), title: t("about.team.members.2.title") } },
-    { image: "/people/avatar3.jpeg" },
+    { image: "/people/july-risco.jpeg" },
     { member: { name: t("about.team.members.3.name"), title: t("about.team.members.3.title") } },
-    { image: "/people/woman.jpg" },
+    { image: "/people/victor-porta.jpeg" },
   ];
 };
